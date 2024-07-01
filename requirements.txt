@@ -1,7 +1,6 @@
 streamlit
 langchain
 langchain-groq
-python-dotenv
 langchain-community
 faiss-cpu
 langchain-chroma
