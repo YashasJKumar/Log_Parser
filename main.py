@@ -151,7 +151,6 @@ if uploaded_file is not None and "vectors" in st.session_state:
     if user_prompt := st.chat_input("Enter your query: ", key="prompt_for_llm"):
         message_container.markdown(":orange[User Prompt: ]")
         message_container.write(user_prompt)
-        message_container.write(" ")
         with st.spinner("Generating response.."):
             start_time = time.time()
             response = st.session_state.retrieval_chain.invoke({"input": user_prompt})
