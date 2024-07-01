@@ -12,12 +12,10 @@ from langchain_community.vectorstores import FAISS
 from langchain_core.prompts import ChatPromptTemplate
 from langchain.chains import create_retrieval_chain
 from langchain.chains.combine_documents import create_stuff_documents_chain
-from dotenv import load_dotenv
 from parser import parse_log
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 
 # ------------------------------------ Loading .env file ---------------------------------------------------------------
-load_dotenv()
 groq_api_key = st.secrets["GROQ_API_KEY"]
 os.environ["GOOGLE_API_KEY"] = st.secrets["GOOGLE_API_KEY"]
 
