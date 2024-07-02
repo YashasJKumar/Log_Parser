@@ -154,7 +154,6 @@ if uploaded_file is not None and "vectors" in st.session_state:
         with st.spinner("Generating response.."):
             start_time = time.time()
             response = st.session_state.retrieval_chain.invoke({"input": user_prompt})
-        st.sidebar.write("")
         st.sidebar.markdown("\n\n\n:green[Response Time : ]" + " " +
                                     str(round((time.time() - start_time), 4)) + " sec.")
         message_container.markdown(":blue[Response:]")
