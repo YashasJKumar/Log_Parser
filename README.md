@@ -3,12 +3,13 @@
 
 An advanced AI-powered solution for parsing and analyzing logs to identify patterns and anomalies. This tool provides actionable insights for diagnosing and resolving issues efficiently, simplifying log analysis for quicker and more accurate problem detection and resolution.
 
-![Log Parser](https://miro.medium.com/v2/resize:fit:1400/1*fZsdZisozTZbM6AaPQKI4Q.gif)
+![Log Parser](https://miro.medium.com/v2/resize:fit:1400/1*iGdFJTHMIG79N2HChWaooQ.gif)
 
 ## Tools Used
 ![Python](https://img.shields.io/badge/Python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 ![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
-![Groq Cloud](https://console.groq.com/og_cloudv2.png)
+![Meta](https://img.shields.io/badge/Meta-%230467DF.svg?style=for-the-badge&logo=Meta&logoColor=white)
+
 
 ## Table of Contents
 - [Demo](#demo)
