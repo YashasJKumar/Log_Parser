@@ -58,6 +58,7 @@ To run this project locally, follow these steps:
 4. **Place your respective API KEYS:**
 
    Replace st.secrets['GROQ_API_KEY'] & st.secrets['GOOGLE_API_KEY'] with your respective API Keys in "main.py".
+   
    Link for API Keys :
    1. [GROQ_API_KEY](https://console.groq.com/keys)
    2. [GOOGLE_API_KEY](https://aistudio.google.com/app/apikey)
@@ -66,7 +67,7 @@ To run this project locally, follow these steps:
 ## Usage
 1. **Run the application:**
     ```bash
-    python main.py
+    streamlit run main.py
     ```
 
 2. **Navigate to the application:**
