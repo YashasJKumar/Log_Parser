@@ -76,7 +76,7 @@ To run this project locally, follow these steps:
 ## Technologies
 - **Python** - For scripting and backend logic.
 - **Streamlit** - For creating an interactive web interface.
-- **Machine Learning** - For log analysis and anomaly detection.
+- **Regular Expressions** - For pattern matching of logs.
 
 ## Contributing
 Contributions are welcome! If you have any suggestions or improvements, please create an issue or submit a pull request.
