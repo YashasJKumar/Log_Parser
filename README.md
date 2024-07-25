@@ -7,14 +7,14 @@ An advanced AI-powered solution for parsing and analyzing logs to identify patte
 
 ## Tools Used
 <div align="center">
-  <a><img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54"></a> &nbsp;
-  <a><img src="https://img.shields.io/badge/Llama 3-0467DF?style=for-the-badge&logo=meta&logoColor=white"></a> &nbsp;
-  <a><img src="https://custom-icon-badges.demolab.com/badge/embedding 001-FFFFFF?style=for-the-badge&logo=google"></a> &nbsp;
-  <a><img src="https://custom-icon-badges.demolab.com/badge/Langchain-FBEEE9?style=for-the-badge&logo=ln"></a> &nbsp;
-  <a><img src="https://custom-icon-badges.demolab.com/badge/FAISS DB-999999?style=for-the-badge&logo=faiss"></a> &nbsp;
-  <a><img src="https://custom-icon-badges.demolab.com/badge/GROQ Cloud-FFFFFF?style=for-the-badge&logo=groq"></a> &nbsp;
-    <a><img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white"></a> &nbsp;
-    <a><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> &nbsp;
+  <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54">&nbsp;
+  <img src="https://img.shields.io/badge/Llama 3-0467DF?style=for-the-badge&logo=meta&logoColor=white"> &nbsp;
+  <img src="https://custom-icon-badges.demolab.com/badge/embedding 001-FFFFFF?style=for-the-badge&logo=google"> &nbsp;
+  <img src="https://custom-icon-badges.demolab.com/badge/Langchain-FBEEE9?style=for-the-badge&logo=ln"> &nbsp;
+  <img src="https://custom-icon-badges.demolab.com/badge/FAISS DB-999999?style=for-the-badge&logo=faiss"> &nbsp;
+  <img src="https://custom-icon-badges.demolab.com/badge/GROQ Cloud-FFFFFF?style=for-the-badge&logo=groq"> &nbsp;
+  <img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white">&nbsp;
+  <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"> &nbsp;
 </div>
 
 
