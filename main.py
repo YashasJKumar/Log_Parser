@@ -35,10 +35,6 @@ with st.sidebar:
 uploaded_file = st.sidebar.file_uploader("Upload your Log File here: ", type=["log", "txt"],
                                          accept_multiple_files=False)
 
-if "greet" not in st.session_state:
-    dynamic_header(header_text=greet_user(), place="sidebar")
-    st.session_state.greet = True
-
 load_llm(session=st.session_state)
 
 if "header_rendered" not in st.session_state:
@@ -50,6 +46,10 @@ else:
     st.markdown('<h1>AI Powered Log Parser</h1>', unsafe_allow_html=True)
 
 st.header('', divider='violet', anchor=False)
+
+if "greet" not in st.session_state:
+    dynamic_header(header_text=greet_user(), place="sidebar")
+    st.session_state.greet = True
 
 
 temp_file_path = None
