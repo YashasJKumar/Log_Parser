@@ -2,6 +2,7 @@
 
 import time
 import tempfile
+import datetime
 import streamlit as st
 from helper_functions import (LLM_OPTIONS, greet_user, style_header, file_parser,
                               dynamic_header, create_vector_embeddings, clear_cache,
@@ -17,6 +18,7 @@ st.set_page_config(
 )
 
 st.sidebar.write("")
+st.sidebar.write(datetime.datetime.now())
 st.sidebar.write(":blue[Powered by ..]")
 st.sidebar.image("./meta_21.png", use_column_width=True)
 
