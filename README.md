@@ -57,7 +57,7 @@ To run this project locally, follow these steps:
 
 4. **Place your respective API KEYS:**
 
-   Replace st.secrets['GROQ_API_KEY'] & st.secrets['GOOGLE_API_KEY'] with your respective API Keys in "main.py".
+   Replace st.secrets['GROQ_API_KEY'] & st.secrets['GOOGLE_API_KEY'] with your respective API Keys in "helper_functions.py" on Line 20 & 21.
    
    Link for API Keys :
    1. [GROQ_API_KEY](https://console.groq.com/keys)
