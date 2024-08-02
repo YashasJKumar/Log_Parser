@@ -17,8 +17,8 @@ from langchain_groq import ChatGroq
 
 # ------------------------------------ Loading environment variables ---------------------------------------------------------------
 
-groq_api_key = os.getenv('GROQ_API_KEY')
-os.environ["GOOGLE_API_KEY"] = os.getenv("GOOGLE_API_KEY")
+groq_api_key = st.secrets['GROQ_API_KEY']
+os.environ["GOOGLE_API_KEY"] = st.secrets["GOOGLE_API_KEY"]
 
 
 def greet_user():
