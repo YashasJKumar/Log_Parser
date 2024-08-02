@@ -73,6 +73,9 @@ To run this project locally, follow these steps:
 2. **Navigate to the application:**
     Open your browser and go to `http://localhost:8501` to view the Streamlit interface.
 
+   ![log_parser](https://github.com/user-attachments/assets/dd3d118d-5058-4399-84af-745298609ec8)
+
+
 ## Technologies
 - **Python** - For scripting and backend logic.
 - **Streamlit** - For creating an interactive web interface.
