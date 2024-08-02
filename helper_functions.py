@@ -22,7 +22,14 @@ os.environ["GOOGLE_API_KEY"] = st.secrets["GOOGLE_API_KEY"]
 
 
 def greet_user():
-    current_hour = datetime.datetime.now().hour
+    # Get the current time
+    
+    now = datetime.datetime.now()
+    delta = datetime.timedelta(hours=5, minutes=30)
+    indian_time = now + delta
+    # Note : This is only for Cloud hosting only.
+    
+    current_hour = indian_time.hour
 
     if 5 <= current_hour < 12:
         greeting = "Good Morning!"
