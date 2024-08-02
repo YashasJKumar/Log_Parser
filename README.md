@@ -27,7 +27,7 @@ An advanced AI-powered solution for parsing and analyzing logs to identify patte
 - [Contributing](#contributing)
 
 ## Demo
-You can see the live demo of the application [here](https://log-parsing-tool.streamlit.app).
+You can see the live demo of the application [here](https://ai-log-parsing-tool.streamlit.app).
 
 ## Features
 - Parse various logs to identify patterns and anomalies.
@@ -73,7 +73,7 @@ To run this project locally, follow these steps:
 2. **Navigate to the application:**
     Open your browser and go to `http://localhost:8501` to view the Streamlit interface.
 
-   ![log_parser](https://github.com/user-attachments/assets/dd3d118d-5058-4399-84af-745298609ec8)
+<img width="1468" alt="Screenshot 2024-08-02 at 12 54 42 PM" src="https://github.com/user-attachments/assets/789e1086-23f4-4c57-ac14-d5720ef8bbed">
 
 
 ## Technologies
