@@ -16,7 +16,7 @@ st.set_page_config(
 )
 
 st.sidebar.write(":blue[Powered by ..]")
-st.sidebar.image("./meta_ai_logo.png", use_column_width=True)
+st.sidebar.image("./meta_21.png", use_column_width=True)
 
 with st.sidebar:
     st.subheader(":red[Disclaimer:]")
