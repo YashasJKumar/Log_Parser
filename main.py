@@ -22,7 +22,7 @@ st.set_page_config(
 st.sidebar.write(":blue[Powered by ..]")
 
 if "header_rendered" not in st.session_state:
-    gif_img = st.sidebar.image("./meta_anim2.gif", use_column_width=True)
+    gif_img = st.sidebar.image("./meta_anim.gif", use_column_width=True)
 else:
     st.sidebar.image("./meta_21.png", use_column_width=True)
 
