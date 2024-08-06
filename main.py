@@ -9,7 +9,7 @@ from helper_functions import (LLM_OPTIONS, greet_user, style_header, file_parser
                               create_vector_embeddings, clear_cache, create_chains, load_llm, validate_log_file)
 
 # ------------------------------------- STREAMLIT UI -------------------------------------------------------------------
-if not os.path.exists(".streamlit"):
+if not os.path.exists(".streamlit") and "greet" not in st.session_state:
     create_config()
 
 st.set_page_config(
