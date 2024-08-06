@@ -73,7 +73,7 @@ To run this project locally, follow these steps:
 2. **Navigate to the application:**
     Open your browser and go to `http://localhost:8501` to view the Streamlit interface.
 
-<img width="1470" alt="Screenshot 2024-08-02 at 2 55 03 PM" src="https://github.com/user-attachments/assets/cfa8c79f-d1ae-4b27-a5d1-00961a2a5269">
+<img width="1468" alt="Screenshot 2024-08-06 at 11 47 04 AM" src="https://github.com/user-attachments/assets/088b057e-e778-4bfe-ab89-a2feb6d4ce1d">
 
 
 ## Technologies
