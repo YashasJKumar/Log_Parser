@@ -1,12 +1,16 @@
 # ------------------------------------- IMPORT STATEMENTS --------------------------------------------------------------
 
+import os
 import time
 import tempfile
 import streamlit as st
+from configuration import create_config
 from helper_functions import (LLM_OPTIONS, greet_user, style_header, file_parser, dynamic_header,
                               create_vector_embeddings, clear_cache, create_chains, load_llm, validate_log_file)
 
 # ------------------------------------- STREAMLIT UI -------------------------------------------------------------------
+if not os.path.exists(".streamlit"):
+    create_config()
 
 st.set_page_config(
     page_icon="💀",
@@ -16,7 +20,11 @@ st.set_page_config(
 )
 
 st.sidebar.write(":blue[Powered by ..]")
-st.sidebar.image("./meta_21.png", use_column_width=True)
+
+if "header_rendered" not in st.session_state:
+    gif_img = st.sidebar.image("./meta_anim2.gif", use_column_width=True)
+else:
+    st.sidebar.image("./meta_21.png", use_column_width=True)
 
 with st.sidebar:
     st.subheader(":red[Disclaimer:]")
@@ -33,7 +41,6 @@ with st.sidebar:
 uploaded_file = st.sidebar.file_uploader("Upload your Log File here: ", type=["log", "txt"],
                                          accept_multiple_files=False)
 
-
 load_llm(session=st.session_state)
 
 if "header_rendered" not in st.session_state:
@@ -49,7 +56,7 @@ st.header('', divider='violet', anchor=False)
 if "greet" not in st.session_state:
     dynamic_header(header_text=greet_user(), place="sidebar")
     st.session_state.greet = True
-
+    gif_img.image("./meta_21.png", use_column_width=True)
 
 temp_file_path = None
 if uploaded_file is not None:
@@ -58,7 +65,6 @@ if uploaded_file is not None:
         with tempfile.NamedTemporaryFile(delete=False) as temp_file:
             temp_file.write(uploaded_file.getvalue())
             temp_file_path = temp_file.name
-
 
 if "vectors" not in st.session_state and uploaded_file is not None:
     is_log_file = validate_log_file(temp_file_path)
@@ -78,8 +84,8 @@ if "vectors" not in st.session_state and uploaded_file is not None:
             time.sleep(1)
 
         for message in display_messages:
-                message.empty()
-                time.sleep(1)  # Clearing all temporary informative messages.
+            message.empty()
+            time.sleep(1)  # Clearing all temporary informative messages.
     else:
         st.warning("I am a Log Parsing Tool. Please upload only Log files.")
 
@@ -91,15 +97,18 @@ if uploaded_file is not None and "vectors" in st.session_state:
         message_container.subheader(":orange[User Prompt: ]")
         message_container.write(user_prompt)
         start_time = time.time()
-        with st.spinner(text="Generating Response..."):
-            chain = st.session_state.retrieval_chain.pick('answer')
-        message_container.subheader(":blue[Response:]")
-        message_container.write_stream(chain.stream({'input': user_prompt}))
-        st.sidebar.subheader("\n\n\n:green[Response Time : ]" + " " +
-                             str(round((time.time() - start_time), 2)) + " sec.")
+        try:
+            with st.spinner(text="Generating Response..."):
+                chain = st.session_state.retrieval_chain.pick('answer')
+            message_container.subheader(":blue[Response:]")
+            message_container.write_stream(chain.stream({'input': user_prompt}))
+            st.sidebar.subheader("\n\n\n:green[Response Time : ]" + " " +
+                                 str(round((time.time() - start_time), 2)) + " sec.")
+        except Exception as e:
+            message_container.empty()
+            message_container.error("There was an error generating response. Please try again later." + " " + str(e))
 
-
-# This block is to remove the chains, retrievers & embeddings from the session when user removes his log file.
+# This block is to remove the chains, retrievers & embeddings from the session when a user removes their log file.
 if uploaded_file is None:
     st.warning("Please upload your Log file before asking questions.")
     if "vectors" in st.session_state:
