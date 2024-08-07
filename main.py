@@ -75,7 +75,7 @@ if "vectors" not in st.session_state and uploaded_file is not None:
             create_vector_embeddings(session=st.session_state, file_path=temp_file_path)
 
         if "vectors" in st.session_state:
-            display_messages.append(st.success("Embedding are ready.."))
+            display_messages.append(st.success("Embeddings are ready.."))
             create_chains(st.session_state)
             # Remove the success_msg
             time.sleep(1)
