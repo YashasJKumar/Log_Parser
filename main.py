@@ -4,13 +4,10 @@ import os
 import time
 import tempfile
 import streamlit as st
-from configuration import create_config
 from helper_functions import (LLM_OPTIONS, greet_user, style_header, file_parser, dynamic_header,
                               create_vector_embeddings, clear_cache, create_chains, load_llm, validate_log_file)
 
 # ------------------------------------- STREAMLIT UI -------------------------------------------------------------------
-if not os.path.exists(".streamlit"):
-    create_config()
 
 st.set_page_config(
     page_icon="💀",
