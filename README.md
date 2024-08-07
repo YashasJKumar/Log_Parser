@@ -27,7 +27,7 @@ An advanced AI-powered solution for parsing and analyzing logs to identify patte
 - [Contributing](#contributing)
 
 ## Demo
-You can see the live demo of the application [here](https://ai-log-parsing-tool.streamlit.app).
+You can see the live demo of the application [here](https://ai-log-parser.onrender.com).
 
 ## Features
 - Parse various logs to identify patterns and anomalies.
