@@ -22,7 +22,8 @@ os.environ["GOOGLE_API_KEY"] = os.getenv("GOOGLE_API_KEY")
 
 
 def greet_user():
-    current_hour = datetime.datetime.now().hour
+    current_time = datetime.datetime.now() + datetime.timedelta(hours=5, minutes=30)
+    current_hour = current_time.hour
 
     if 5 <= current_hour < 12:
         greeting = "Good Morning!"
