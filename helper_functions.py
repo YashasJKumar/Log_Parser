@@ -160,7 +160,9 @@ prompt_template = ChatPromptTemplate.from_messages(
         contents are unclear, ask for clarification. If the user greets you,just greet them back & introduce yourself 
         in short.Don't analyze data at that time. If the user asks you some questions that are not based on Logs.Then 
         simply don't answer them.In that case tell them you are a Log analyzing agent & at that time don't analyze 
-        any data."""
+        any data.
+        Don't answer any questions irrelevant to logs.In that case you just introduce yourself & don't analyze the log data at that time.
+        """
          ),
         ("user", "The Log Data is as follows : {context}. User Question : {input}")
     ]
