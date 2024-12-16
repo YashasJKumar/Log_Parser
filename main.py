@@ -19,9 +19,9 @@ st.set_page_config(
 st.sidebar.write(":blue[Powered by ..]")
 
 if "header_rendered" not in st.session_state:
-    gif_img = st.sidebar.image("./meta_anim.gif", use_column_width=True)
+    gif_img = st.sidebar.image("./meta_anim.gif", use_container_width=True)
 else:
-    st.sidebar.image("./meta_21.png", use_column_width=True)
+    st.sidebar.image("./meta_21.png", use_container_width=True)
 
 with st.sidebar:
     st.subheader(":red[Disclaimer:]")
@@ -53,7 +53,7 @@ st.header('', divider='violet', anchor=False)
 if "greet" not in st.session_state:
     dynamic_header(header_text=greet_user(), place="sidebar")
     st.session_state.greet = True
-    gif_img.image("./meta_21.png", use_column_width=True)
+    gif_img.image("./meta_21.png", use_container_width=True)
 
 temp_file_path = None
 if uploaded_file is not None:
