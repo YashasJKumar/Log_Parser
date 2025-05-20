@@ -191,8 +191,7 @@ validation_template = ChatPromptTemplate.from_messages(
 LLM_OPTIONS = {
     "Llama 3 8B": "llama3-8b-8192",
     "Llama 3 70B": "llama3-70b-8192",
-    "Llama 3.1 405B": "llama-3.1-405b-reasoning",
-    "Llama 3.1 70B": "llama-3.1-70b-versatile",
+    "Llama 3.3 70B": "llama-3.3-70b-versatile",
     "Llama 3.1 8B": "llama-3.1-8b-instant",
 }
 
