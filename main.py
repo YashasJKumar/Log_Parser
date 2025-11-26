@@ -86,6 +86,22 @@ if "vectors" not in st.session_state and uploaded_file is not None:
     else:
         st.warning("I am a Log Parsing Tool. Please upload only Log files.")
 
+# Display detected log structure info if available
+if "classification_result" in st.session_state and uploaded_file is not None:
+    classification = st.session_state.classification_result
+    with st.expander("📋 Detected Log Structure", expanded=False):
+        col1, col2 = st.columns(2)
+        with col1:
+            st.write(f"**Log Type:** {classification.get('log_type', 'Unknown')}")
+            st.write(f"**Confidence:** {classification.get('confidence', 'N/A')}%")
+        with col2:
+            detected_fields = classification.get('detected_fields', [])
+            if detected_fields:
+                st.write(f"**Fields:** {', '.join(detected_fields)}")
+        format_desc = classification.get('format_description', '')
+        if format_desc:
+            st.write(f"**Format:** {format_desc}")
+
 # User Prompting Part:
 if uploaded_file is not None and "vectors" in st.session_state:
     if user_prompt := st.chat_input("Enter your query: ", key="prompt_for_llm"):
