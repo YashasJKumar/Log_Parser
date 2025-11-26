@@ -14,6 +14,7 @@ from langchain.chains import create_retrieval_chain
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from parser import parse_log
 from langchain_groq import ChatGroq
+from config import CSV_OUTPUT_PATH
 
 # ------------------------------------ Loading environment variables ---------------------------------------------------------------
 
@@ -118,7 +119,7 @@ def create_vector_embeddings(session, file_path):
         if "not_log" in session:
             session.loader = TextLoader(file_path=file_path)
         else:
-            session.loader = CSVLoader(file_path="parsed_log_data.csv")
+            session.loader = CSVLoader(file_path=CSV_OUTPUT_PATH)
 
         session.log_file = session.loader.load()
 

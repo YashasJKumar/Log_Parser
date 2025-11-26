@@ -7,6 +7,7 @@ It can detect various log formats and extract structured data from them.
 
 import json
 import csv
+import io
 import re
 from langchain_groq import ChatGroq
 from langchain_core.prompts import ChatPromptTemplate
@@ -17,7 +18,9 @@ from config import (
     LLM_MAX_TOKENS,
     BATCH_SIZE,
     MAX_SAMPLE_LINES,
-    CSV_OUTPUT_PATH
+    CSV_OUTPUT_PATH,
+    CONFIDENCE_THRESHOLD,
+    CSV_SKIP_KEYWORDS
 )
 
 
@@ -261,22 +264,38 @@ def _parse_json_response(response_text: str):
     except json.JSONDecodeError:
         pass
     
-    # Try to find JSON in the response
-    # Look for JSON object
-    json_match = re.search(r'\{[^{}]*\}', response_text, re.DOTALL)
-    if json_match:
-        try:
-            return json.loads(json_match.group())
-        except json.JSONDecodeError:
-            pass
+    # Try to find JSON object with nested structures
+    # Find opening brace and match to closing brace counting nested braces
+    start_idx = response_text.find('{')
+    if start_idx != -1:
+        brace_count = 0
+        for i, char in enumerate(response_text[start_idx:], start_idx):
+            if char == '{':
+                brace_count += 1
+            elif char == '}':
+                brace_count -= 1
+                if brace_count == 0:
+                    json_str = response_text[start_idx:i+1]
+                    try:
+                        return json.loads(json_str)
+                    except json.JSONDecodeError:
+                        break
     
-    # Look for JSON array
-    array_match = re.search(r'\[[^\[\]]*\]', response_text, re.DOTALL)
-    if array_match:
-        try:
-            return json.loads(array_match.group())
-        except json.JSONDecodeError:
-            pass
+    # Try to find JSON array with nested structures
+    start_idx = response_text.find('[')
+    if start_idx != -1:
+        bracket_count = 0
+        for i, char in enumerate(response_text[start_idx:], start_idx):
+            if char == '[':
+                bracket_count += 1
+            elif char == ']':
+                bracket_count -= 1
+                if bracket_count == 0:
+                    json_str = response_text[start_idx:i+1]
+                    try:
+                        return json.loads(json_str)
+                    except json.JSONDecodeError:
+                        break
     
     return None
 
@@ -301,13 +320,12 @@ def _parse_csv_response(response_text: str, expected_columns: int) -> list:
             continue
         
         # Skip if it looks like a header or explanation
-        if line.lower().startswith(('here', 'the ', 'csv', 'output', 'parsed')):
+        if line.lower().startswith(CSV_SKIP_KEYWORDS):
             continue
         
         # Parse the CSV line
         try:
             # Use csv module for proper parsing
-            import io
             reader = csv.reader(io.StringIO(line))
             row = next(reader, None)
             

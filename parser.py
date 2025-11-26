@@ -2,7 +2,7 @@ import re
 import csv
 from datetime import datetime
 
-from config import CSV_OUTPUT_PATH
+from config import CSV_OUTPUT_PATH, CONFIDENCE_THRESHOLD
 from llm_classifier import (
     classify_log_type,
     llm_based_parser,
@@ -165,7 +165,7 @@ def parse_log(input_file_path, use_llm=True, groq_api_key=None):
             log_sample = get_log_sample(input_file_path)
             classification_result = classify_log_type(log_sample, groq_api_key)
             
-            if classification_result and classification_result.get('confidence', 0) > 30:
+            if classification_result and classification_result.get('confidence', 0) > CONFIDENCE_THRESHOLD:
                 type_of_log = classification_result.get('log_type', 'Custom')
                 print(f"LLM detected {type_of_log} Log (confidence: {classification_result.get('confidence')}%)")
                 
