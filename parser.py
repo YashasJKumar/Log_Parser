@@ -2,6 +2,13 @@ import re
 import csv
 from datetime import datetime
 
+from config import CSV_OUTPUT_PATH
+from llm_classifier import (
+    classify_log_type,
+    llm_based_parser,
+    get_log_sample
+)
+
 
 kernel_log_pattern = r'^(\w+\s+\d+\s+\d+:\d+:\d+)\s+(\w+)\s+(\w+):\s+\[([\d\s.]+)\]\s+(.*)$'
 dmesg_log_pattern = re.compile(r'(\w+)\s*:\s*(\w+)\s*:\s*\[(.*?)\]\s*(.*)')
@@ -134,12 +141,55 @@ def ovs_parser(log_file_path, csv_file_path = "./parsed_log_data.csv"):
     print("Successfully parsed OVS logs")
 
 
-def parse_log(input_file_path):
+def parse_log(input_file_path, use_llm=True, groq_api_key=None):
+    """
+    Enhanced log parsing with LLM support.
+    
+    Args:
+        input_file_path: Path to the log file to parse
+        use_llm: If True, use LLM-based classification and parsing
+        groq_api_key: API key for Groq (required if use_llm=True)
+        
+    Returns:
+        tuple: (type_of_log, msg, classification_result)
+               - type_of_log: Detected log type string
+               - msg: 'success' or 'ERR'
+               - classification_result: Dict with classification details (only when using LLM)
+    """
     type_of_log, msg = None, 'success'
+    classification_result = None
 
+    # Try LLM-based classification first if enabled
+    if use_llm and groq_api_key:
+        try:
+            log_sample = get_log_sample(input_file_path)
+            classification_result = classify_log_type(log_sample, groq_api_key)
+            
+            if classification_result and classification_result.get('confidence', 0) > 30:
+                type_of_log = classification_result.get('log_type', 'Custom')
+                print(f"LLM detected {type_of_log} Log (confidence: {classification_result.get('confidence')}%)")
+                
+                # Try LLM-based parsing for non-standard types
+                if type_of_log not in ['Kernel', 'DMESG', 'OVS', 'Syslog', 'Sys']:
+                    success = llm_based_parser(
+                        input_file_path, 
+                        classification_result, 
+                        groq_api_key
+                    )
+                    if success:
+                        return type_of_log, msg, classification_result
+                    else:
+                        msg = "ERR"
+                        return type_of_log, msg, classification_result
+                # For known types, fall through to regex parsing below
+                
+        except Exception as e:
+            print(f"LLM classification failed, falling back to regex: {e}")
+            classification_result = None
+
+    # Regex-based parsing (original logic or fallback)
     with open(input_file_path) as input_file:
         first_line = input_file.readline()
-
 
     if re.match(kernel_log_pattern, first_line.strip()):
         type_of_log = 'Kernel'
@@ -174,9 +224,35 @@ def parse_log(input_file_path):
             msg = 'ERR'
 
     else:
+        # Last resort: try LLM parsing for unknown format
+        if use_llm and groq_api_key and classification_result:
+            success = llm_based_parser(
+                input_file_path,
+                classification_result,
+                groq_api_key
+            )
+            if success:
+                type_of_log = classification_result.get('log_type', 'Custom')
+                return type_of_log, msg, classification_result
+        
         print("Not a log.")
-        return None, None
+        return None, None, None
 
+    return type_of_log, msg, classification_result
+
+
+# Legacy function for backward compatibility
+def parse_log_legacy(input_file_path):
+    """
+    Original regex-based log parsing (backward compatible).
+    
+    Args:
+        input_file_path: Path to the log file
+        
+    Returns:
+        tuple: (type_of_log, msg)
+    """
+    type_of_log, msg, _ = parse_log(input_file_path, use_llm=False)
     return type_of_log, msg
 
 

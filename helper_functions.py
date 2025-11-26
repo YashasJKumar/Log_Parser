@@ -70,14 +70,40 @@ def validate_log_file(users_file):
 
 
 def file_parser(uploaded_file, file_path, display_messages, session):
+    """
+    Parse log file using LLM-based classification with regex fallback.
+    
+    Args:
+        uploaded_file: Streamlit uploaded file object
+        file_path: Path to the temporary file
+        display_messages: List to append status messages
+        session: Streamlit session state
+    """
     if uploaded_file is not None:
         with st.spinner(text="Parsing the Log File..."):
-            type_of_log, msg = parse_log(file_path)
+            type_of_log, msg, classification_result = parse_log(
+                file_path, 
+                use_llm=True, 
+                groq_api_key=groq_api_key
+            )
+        
+        # Store classification result in session for UI display
+        if classification_result:
+            session.classification_result = classification_result
 
         if type_of_log is not None and msg == "success":
-            display_messages.append(st.success("Detected " + type_of_log + " Logs."))
+            confidence = classification_result.get('confidence', 'N/A') if classification_result else 'N/A'
+            display_messages.append(st.success(f"✅ Detected {type_of_log} Logs (Confidence: {confidence}%)"))
             time.sleep(1)
             display_messages.append(st.success("Parsing Completed Successfully!"))
+            
+            # Show detected structure if available
+            if classification_result:
+                detected_fields = classification_result.get('detected_fields', [])
+                format_desc = classification_result.get('format_description', '')
+                if detected_fields:
+                    session.detected_fields = detected_fields
+                    session.format_description = format_desc
         else:
             display_messages.append(st.warning("File didn't match predefined logs."))
             time.sleep(1)
@@ -115,6 +141,28 @@ def create_vector_embeddings(session, file_path):
                                                    embedding=session.embeddings)
         except Exception:
             st.warning("Please Check your embedding model & Refresh the page.")
+
+
+def create_dynamic_loader(csv_path: str, detected_fields: list = None):
+    """
+    Create appropriate document loader based on detected log structure.
+    
+    Args:
+        csv_path: Path to the CSV file
+        detected_fields: List of detected field names (optional)
+        
+    Returns:
+        CSVLoader configured for the detected schema
+    """
+    # Use detected fields as source columns if available
+    if detected_fields and len(detected_fields) > 0:
+        # Include all fields in the content
+        return CSVLoader(
+            file_path=csv_path,
+            csv_args={'delimiter': ','},
+            source_column=detected_fields[0] if detected_fields else None
+        )
+    return CSVLoader(file_path=csv_path)
 
 
 def load_llm(session):
