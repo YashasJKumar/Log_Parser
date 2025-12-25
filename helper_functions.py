@@ -8,13 +8,12 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_community.document_loaders import CSVLoader
 from langchain_community.document_loaders import TextLoader
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
-from langchain.chains import create_retrieval_chain
-from langchain.chains.combine_documents import create_stuff_documents_chain
+from langchain_classic.chains import create_retrieval_chain
+from langchain_classic.chains.combine_documents import create_stuff_documents_chain
 from parser import parse_log
 from langchain_groq import ChatGroq
-from config import CSV_OUTPUT_PATH
 
 # ------------------------------------ Loading environment variables ---------------------------------------------------------------
 
@@ -62,7 +61,7 @@ def validate_log_file(users_file):
             if not line:
                 break
             first_five_lines.append(line.strip())
-    loaded_llm = ChatGroq(groq_api_key=groq_api_key, model_name="llama3-8b-8192")
+    loaded_llm = ChatGroq(groq_api_key=groq_api_key, model_name="llama-3.1-8b-instant")
     check_prompt = validation_template.invoke({"context": first_five_lines})
     response = loaded_llm.invoke(check_prompt)
     if response.content.lower() == "yes":
@@ -82,29 +81,13 @@ def file_parser(uploaded_file, file_path, display_messages, session):
     """
     if uploaded_file is not None:
         with st.spinner(text="Parsing the Log File..."):
-            type_of_log, msg, classification_result = parse_log(
-                file_path, 
-                use_llm=True, 
-                groq_api_key=groq_api_key
-            )
-        
-        # Store classification result in session for UI display
-        if classification_result:
-            session.classification_result = classification_result
+            type_of_log, msg = parse_log(file_path)
 
         if type_of_log is not None and msg == "success":
-            confidence = classification_result.get('confidence', 'N/A') if classification_result else 'N/A'
-            display_messages.append(st.success(f"✅ Detected {type_of_log} Logs (Confidence: {confidence}%)"))
+            display_messages.append(st.success(f"✅ Detected {type_of_log} Logs."))
             time.sleep(1)
             display_messages.append(st.success("Parsing Completed Successfully!"))
-            
-            # Show detected structure if available
-            if classification_result:
-                detected_fields = classification_result.get('detected_fields', [])
-                format_desc = classification_result.get('format_description', '')
-                if detected_fields:
-                    session.detected_fields = detected_fields
-                    session.format_description = format_desc
+
         else:
             display_messages.append(st.warning("File didn't match predefined logs."))
             time.sleep(1)
@@ -119,7 +102,7 @@ def create_vector_embeddings(session, file_path):
         if "not_log" in session:
             session.loader = TextLoader(file_path=file_path)
         else:
-            session.loader = CSVLoader(file_path=CSV_OUTPUT_PATH)
+            session.loader = CSVLoader(file_path=file_path)
 
         session.log_file = session.loader.load()
 
@@ -135,7 +118,7 @@ def create_vector_embeddings(session, file_path):
 
         try:
             # Converting into embeddings.
-            session.embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
+            session.embeddings = GoogleGenerativeAIEmbeddings(model="models/gemini-embedding-001")
 
             # Initializing the FAISS DB & storing the embeddings in it
             session.vectors = FAISS.from_documents(documents=split_logs,
@@ -238,8 +221,6 @@ validation_template = ChatPromptTemplate.from_messages(
 
 # These are the Meta LLM's currently available in Groq-Cloud
 LLM_OPTIONS = {
-    "Llama 3 8B": "llama3-8b-8192",
-    "Llama 3 70B": "llama3-70b-8192",
     "Llama 3.3 70B": "llama-3.3-70b-versatile",
     "Llama 3.1 8B": "llama-3.1-8b-instant",
 }
