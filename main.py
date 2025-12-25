@@ -1,6 +1,5 @@
 # ------------------------------------- IMPORT STATEMENTS --------------------------------------------------------------
 
-import os
 import time
 import tempfile
 import streamlit as st
@@ -16,19 +15,13 @@ st.set_page_config(
     initial_sidebar_state="auto"
 )
 
-st.sidebar.write(":blue[Powered by ..]")
-
-if "header_rendered" not in st.session_state:
-    gif_img = st.sidebar.image("./meta_anim.gif", use_container_width=True)
-else:
-    st.sidebar.image("./meta_21.png", use_container_width=True)
 
 with st.sidebar:
     st.subheader(":red[Disclaimer:]")
-    st.write("\nUpload your Log File & unleash the power of Llama 3 & 3.1 powered by Groq inferencing engine to "
+    st.write("\nUpload your Log File & unleash the power of Llama models powered by Groq inferencing engine to "
              "answer your queries.\n")
     st.write("")
-    st.session_state.selected_llm = st.selectbox(label="Choose your Llama 3 variant here 👇",
+    st.session_state.selected_llm = st.selectbox(label="Choose your Llama variant here 👇",
                                                  label_visibility="visible",
                                                  options=LLM_OPTIONS)
     st.markdown(style_header, unsafe_allow_html=True)
@@ -53,7 +46,6 @@ st.header('', divider='violet', anchor=False)
 if "greet" not in st.session_state:
     dynamic_header(header_text=greet_user(), place="sidebar")
     st.session_state.greet = True
-    gif_img.image("./meta_21.png", use_container_width=True)
 
 temp_file_path = None
 if uploaded_file is not None:
@@ -85,22 +77,6 @@ if "vectors" not in st.session_state and uploaded_file is not None:
             time.sleep(1)  # Clearing all temporary informative messages.
     else:
         st.warning("I am a Log Parsing Tool. Please upload only Log files.")
-
-# Display detected log structure info if available
-if "classification_result" in st.session_state and uploaded_file is not None:
-    classification = st.session_state.classification_result
-    with st.expander("📋 Detected Log Structure", expanded=False):
-        col1, col2 = st.columns(2)
-        with col1:
-            st.write(f"**Log Type:** {classification.get('log_type', 'Unknown')}")
-            st.write(f"**Confidence:** {classification.get('confidence', 'N/A')}%")
-        with col2:
-            detected_fields = classification.get('detected_fields', [])
-            if detected_fields:
-                st.write(f"**Fields:** {', '.join(detected_fields)}")
-        format_desc = classification.get('format_description', '')
-        if format_desc:
-            st.write(f"**Format:** {format_desc}")
 
 # User Prompting Part:
 if uploaded_file is not None and "vectors" in st.session_state:
