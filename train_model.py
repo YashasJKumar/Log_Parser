@@ -37,31 +37,21 @@ def main() -> None:
 
     samples = load_training_samples(data_path)
 
-    texts = [sample.get("text", "") for sample in samples]
     labels = [int(sample.get("is_log", 0)) for sample in samples]
 
-    x_train, x_test, y_train, y_test = train_test_split(
-        texts,
-        labels,
+    train_subset, test_subset = train_test_split(
+        samples,
         test_size=0.25,
         random_state=42,
         stratify=labels if len(set(labels)) > 1 else None,
     )
 
-    train_subset = []
-    for text, label in zip(x_train, y_train):
-        for sample in samples:
-            if sample.get("text", "") == text and int(sample.get("is_log", 0)) == label:
-                train_subset.append(sample)
-                break
-
-    if not train_subset:
-        train_subset = samples
-
     models = train_models(train_subset)
     save_models(models, output_path)
 
     binary_model = models["binary"]
+    x_test = [sample.get("text", "") for sample in test_subset]
+    y_test = [int(sample.get("is_log", 0)) for sample in test_subset]
     predictions = binary_model.predict(x_test)
 
     print(f"Training samples: {len(train_subset)}")
