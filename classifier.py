@@ -16,6 +16,8 @@ from sklearn.preprocessing import FunctionTransformer
 
 LOG_TYPES = ("sys", "kernel", "auth", "ovs")
 PLATFORMS = ("linux", "macos", "windows", "unknown")
+FEATURE_VECTOR_SIZE = 12
+KEYWORD_CONFIDENCE_THRESHOLD = 0.8
 
 TIMESTAMP_PATTERNS = [
     re.compile(r"\b\d{4}-\d{2}-\d{2}[ T]\d{2}:\d{2}:\d{2}"),
@@ -57,7 +59,7 @@ def extract_features(text: str) -> np.ndarray:
     content = _safe_text(text)
     lines = [line for line in content.splitlines() if line.strip()]
     if not lines:
-        return np.zeros(12, dtype=float)
+        return np.zeros(FEATURE_VECTOR_SIZE, dtype=float)
 
     line_count = len(lines)
     timestamp_hits = sum(any(pattern.search(line) for pattern in TIMESTAMP_PATTERNS) for line in lines)
@@ -235,7 +237,7 @@ class LogFileClassifier:
         keyword_log_type = _keyword_prediction(cleaned_text, TYPE_KEYWORDS)
         if keyword_log_type is not None:
             heuristic_log_type, keyword_confidence = keyword_log_type
-            if keyword_confidence >= 0.8 and keyword_confidence >= log_type_confidence:
+            if keyword_confidence >= KEYWORD_CONFIDENCE_THRESHOLD and keyword_confidence >= log_type_confidence:
                 log_type = heuristic_log_type
             log_type_confidence = max(log_type_confidence, keyword_confidence)
 
@@ -247,7 +249,7 @@ class LogFileClassifier:
         keyword_platform = _keyword_prediction(cleaned_text, PLATFORM_KEYWORDS)
         if keyword_platform is not None:
             heuristic_platform, keyword_confidence = keyword_platform
-            if keyword_confidence >= 0.8 and keyword_confidence >= platform_confidence:
+            if keyword_confidence >= KEYWORD_CONFIDENCE_THRESHOLD and keyword_confidence >= platform_confidence:
                 platform = heuristic_platform
             platform_confidence = max(platform_confidence, keyword_confidence)
 

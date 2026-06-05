@@ -11,6 +11,10 @@ from sklearn.model_selection import train_test_split
 from classifier import save_models, train_models
 
 
+def sample_label(sample: Dict[str, str]) -> int:
+    return int(sample.get("is_log", 0))
+
+
 def load_training_samples(data_path: Path) -> List[Dict[str, str]]:
     if not data_path.exists():
         raise FileNotFoundError(f"Training data file not found: {data_path}")
@@ -40,7 +44,7 @@ def main() -> None:
 
     samples = load_training_samples(data_path)
 
-    labels = [int(sample.get("is_log", 0)) for sample in samples]
+    labels = [sample_label(sample) for sample in samples]
 
     train_subset, test_subset = train_test_split(
         samples,
@@ -54,7 +58,7 @@ def main() -> None:
 
     binary_model = models["binary"]
     x_test = [sample.get("text", "") for sample in test_subset]
-    y_test = [int(sample.get("is_log", 0)) for sample in test_subset]
+    y_test = [sample_label(sample) for sample in test_subset]
     predictions = binary_model.predict(x_test)
 
     print(f"Training samples: {len(train_subset)}")
