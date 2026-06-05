@@ -10,6 +10,7 @@ from classifier import LogFileClassifier
 
 
 MODEL_PATH = Path("models/log_classifier.joblib")
+MAX_PREVIEW_LINES = 20
 
 
 def decode_uploaded_file(file_bytes: bytes) -> str:
@@ -25,7 +26,7 @@ def decode_uploaded_file(file_bytes: bytes) -> str:
     return file_bytes.decode("utf-8", errors="ignore")
 
 
-def random_lines(content: str, count: int = 20) -> List[str]:
+def sample_random_lines(content: str, count: int = MAX_PREVIEW_LINES) -> List[str]:
     lines = [line for line in content.splitlines() if line.strip()]
     if not lines:
         return []
@@ -76,8 +77,8 @@ def main() -> None:
         st.warning("The uploaded file is empty or not readable as text.")
         return
 
-    sampled = random_lines(content, 20)
-    st.subheader("Random 20 Lines")
+    sampled = sample_random_lines(content, MAX_PREVIEW_LINES)
+    st.subheader(f"Random {MAX_PREVIEW_LINES} Lines")
     if sampled:
         st.code("\n".join(sampled), language="text")
     else:

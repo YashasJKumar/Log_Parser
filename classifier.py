@@ -4,7 +4,7 @@ import json
 import re
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Dict, List, Optional, Sequence
+from typing import Dict, List, Optional, Sequence, Tuple
 
 import joblib
 import numpy as np
@@ -92,7 +92,7 @@ def extract_feature_matrix(texts: Sequence[str]) -> np.ndarray:
     return np.vstack([extract_features(_safe_text(text)) for text in texts])
 
 
-def _keyword_prediction(text: str, keyword_map: Dict[str, List[str]]) -> Optional[tuple[str, float]]:
+def _keyword_prediction(text: str, keyword_map: Dict[str, List[str]]) -> Optional[Tuple[str, float]]:
     lower_text = text.lower()
     scores: Dict[str, int] = {
         label: sum(lower_text.count(keyword) for keyword in keywords)
@@ -145,28 +145,6 @@ def _build_pipeline() -> Pipeline:
             ),
         ]
     )
-
-
-def build_default_dataset() -> List[Dict[str, str]]:
-    return [
-        {"text": "Jan 10 10:01:14 host1 systemd[1]: Started Daily apt download activities.", "is_log": 1, "log_type": "sys", "platform": "linux"},
-        {"text": "2025-01-11 09:16:52 INFO service[2231]: rotating syslog file", "is_log": 1, "log_type": "sys", "platform": "linux"},
-        {"text": "May 02 14:22:03 MacBook-Pro com.apple.xpc.launchd[1] <Notice>: Service exited", "is_log": 1, "log_type": "sys", "platform": "macos"},
-        {"text": "2025-05-02 12:01:03 kernel: [13092.120] usb 2-1: reset high-speed USB device", "is_log": 1, "log_type": "kernel", "platform": "linux"},
-        {"text": "Jun 04 11:09:45 node1 kernel: BUG: soft lockup - CPU#2 stuck for 26s", "is_log": 1, "log_type": "kernel", "platform": "linux"},
-        {"text": "2025-06-04 11:42:14 WARN kernel32 module fault detected in win32 stack", "is_log": 1, "log_type": "kernel", "platform": "windows"},
-        {"text": "Jan 25 08:17:41 server sshd[19221]: Failed password for invalid user admin from 10.0.0.3", "is_log": 1, "log_type": "auth", "platform": "linux"},
-        {"text": "2025-01-25 08:18:12 INFO sudo: pam_unix(sudo:session): session opened for user root", "is_log": 1, "log_type": "auth", "platform": "linux"},
-        {"text": "06/01/2025 07:01:11 ERROR EventLog: Logon failure for user SERVICE_ACCOUNT", "is_log": 1, "log_type": "auth", "platform": "windows"},
-        {"text": "2025-03-10T10:11:22.120Z|00035|ovs-vswitchd|WARN|bridge br-int: dropped packet", "is_log": 1, "log_type": "ovs", "platform": "linux"},
-        {"text": "2025-03-10T10:12:22.120Z|00036|ovsdb-server|INFO|compaction complete", "is_log": 1, "log_type": "ovs", "platform": "linux"},
-        {"text": "2025-03-10 12:41:00 INFO openvswitch datapath reconnect on darwin test host", "is_log": 1, "log_type": "ovs", "platform": "macos"},
-        {"text": "Shopping list: milk, bread, eggs, apples and cereal", "is_log": 0, "log_type": "none", "platform": "unknown"},
-        {"text": "def calculate_total(items):\n    return sum(items)", "is_log": 0, "log_type": "none", "platform": "unknown"},
-        {"text": "Meeting notes: finalize quarterly roadmap and assign action items.", "is_log": 0, "log_type": "none", "platform": "unknown"},
-        {"text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "is_log": 0, "log_type": "none", "platform": "unknown"},
-        {"text": "This text document explains how to install an application manually.", "is_log": 0, "log_type": "none", "platform": "unknown"},
-    ]
 
 
 def train_models(samples: Sequence[Dict[str, str]]) -> Dict[str, Pipeline]:
@@ -256,7 +234,9 @@ class LogFileClassifier:
         log_type_confidence = float(log_type_probs[log_type_index])
         keyword_log_type = _keyword_prediction(cleaned_text, TYPE_KEYWORDS)
         if keyword_log_type is not None:
-            log_type, keyword_confidence = keyword_log_type
+            heuristic_log_type, keyword_confidence = keyword_log_type
+            if keyword_confidence >= 0.8 and keyword_confidence >= log_type_confidence:
+                log_type = heuristic_log_type
             log_type_confidence = max(log_type_confidence, keyword_confidence)
 
         platform_model = self.models["platform"]
@@ -266,7 +246,9 @@ class LogFileClassifier:
         platform_confidence = float(platform_probs[platform_index])
         keyword_platform = _keyword_prediction(cleaned_text, PLATFORM_KEYWORDS)
         if keyword_platform is not None:
-            platform, keyword_confidence = keyword_platform
+            heuristic_platform, keyword_confidence = keyword_platform
+            if keyword_confidence >= 0.8 and keyword_confidence >= platform_confidence:
+                platform = heuristic_platform
             platform_confidence = max(platform_confidence, keyword_confidence)
 
         return PredictionResult(

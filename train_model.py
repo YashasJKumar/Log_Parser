@@ -8,12 +8,12 @@ from typing import Dict, List
 from sklearn.metrics import accuracy_score, classification_report
 from sklearn.model_selection import train_test_split
 
-from classifier import build_default_dataset, save_models, train_models
+from classifier import save_models, train_models
 
 
 def load_training_samples(data_path: Path) -> List[Dict[str, str]]:
     if not data_path.exists():
-        return build_default_dataset()
+        raise FileNotFoundError(f"Training data file not found: {data_path}")
 
     samples: List[Dict[str, str]] = []
     with data_path.open("r", encoding="utf-8") as f:
@@ -23,7 +23,10 @@ def load_training_samples(data_path: Path) -> List[Dict[str, str]]:
                 continue
             samples.append(json.loads(line))
 
-    return samples or build_default_dataset()
+    if not samples:
+        raise ValueError(f"Training data file is empty: {data_path}")
+
+    return samples
 
 
 def main() -> None:
