@@ -107,3 +107,6 @@ venv.bak/
 
 # Parsed log output
 parsed_log_data.csv
+
+# Trained ML artifacts
+models/*.joblib

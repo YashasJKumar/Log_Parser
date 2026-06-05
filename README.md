@@ -1,92 +1,60 @@
+# Log File Classification (ML + Streamlit)
 
-# Log Parser
+This repository includes a machine-learning pipeline for classifying uploaded files as **log** or **non-log**, and for identifying:
+- log type (`sys`, `kernel`, `auth`, `ovs`)
+- likely platform (`Linux`, `macOS`, `Windows`)
 
-An advanced AI-powered solution for parsing and analyzing logs to identify patterns and anomalies. This tool provides actionable insights for diagnosing and resolving issues efficiently, simplifying log analysis for quicker and more accurate problem detection and resolution.
+## Project structure
 
-![Log Parser](https://miro.medium.com/v2/resize:fit:1400/1*iGdFJTHMIG79N2HChWaooQ.gif)
-
-## Tools Used
-<div align="center">
-  <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54">&nbsp;
-  <img src="https://img.shields.io/badge/Llama 3-0467DF?style=for-the-badge&logo=meta&logoColor=white"> &nbsp;
-  <img src="https://custom-icon-badges.demolab.com/badge/embedding 001-FFFFFF?style=for-the-badge&logo=google"> &nbsp;
-  <img src="https://custom-icon-badges.demolab.com/badge/Langchain-FBEEE9?style=for-the-badge&logo=ln"> &nbsp;
-  <img src="https://custom-icon-badges.demolab.com/badge/FAISS DB-999999?style=for-the-badge&logo=faiss"> &nbsp;
-  <img src="https://custom-icon-badges.demolab.com/badge/GROQ Cloud-FFFFFF?style=for-the-badge&logo=groq"> &nbsp;
-  <img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white">&nbsp;
-  <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"> &nbsp;
-</div>
-
-
-## Table of Contents
-- [Demo](#demo)
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Technologies](#technologies)
-- [Contributing](#contributing)
-
-## Demo
-You can see the live demo of the application [here](https://https://ai-log-parsing-tool.streamlit.app).
+- `data/` - training dataset (`training_data.jsonl`)
+- `models/` - persisted trained model artifacts
+- `classifier.py` - feature extraction, model training, inference, and persistence utilities
+- `train_model.py` - training script
+- `app.py` - Streamlit UI for file upload + random 20 line preview + classification
+- `requirements.txt` - Python dependencies
 
 ## Features
-- Parse various logs to identify patterns and anomalies.
-- Provides actionable insights for diagnosing issues.
-- Simplifies log analysis for quicker problem detection.
-- Currently able to parse OVS, Kernel, Sys Logs & DMESG Logs.
 
-## Installation
-To run this project locally, follow these steps:
+- Binary classification: log vs non-log
+- Multi-class classification: `sys`, `kernel`, `auth`, `ovs`
+- Platform classification: `linux`, `macos`, `windows`
+- Confidence scores for every prediction
+- Graceful handling for empty/unreadable files and missing model artifacts
 
-1. **Clone the repository:**
-    ```bash
-    git clone https://github.com/YashasJKumar/Log_Parser.git
-    cd Log_Parser
-    ```
+## Setup
 
-2. **Set up a virtual environment:**
-    ```bash
-    python3 -m venv env
-    source env/bin/activate  # On Windows use `env\Scriptsctivate`
-    ```
+```bash
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+```
 
-3. **Install dependencies:**
-    ```bash
-    pip install -r requirements.txt
-    ```
+## Train the model
 
-4. **Place your respective API KEYS:**
+```bash
+python train_model.py
+```
 
-   Replace st.secrets['GROQ_API_KEY'] & st.secrets['GOOGLE_API_KEY'] with your respective API Keys in "helper_functions.py" on Line 20 & 21.
-   
-   Link for API Keys :
-   1. [GROQ_API_KEY](https://console.groq.com/keys)
-   2. [GOOGLE_API_KEY](https://aistudio.google.com/app/apikey)
+Optional arguments:
 
+```bash
+python train_model.py --data data/training_data.jsonl --output models/log_classifier.joblib
+```
 
-## Usage
-1. **Run the application:**
-    ```bash
-    streamlit run main.py
-    ```
+## Run the Streamlit app
 
-2. **Navigate to the application:**
-    Open your browser and go to `http://localhost:8501` to view the Streamlit interface.
+```bash
+streamlit run app.py
+```
 
-<img width="1468" alt="Screenshot 2024-08-06 at 11 47 04 AM" src="https://github.com/user-attachments/assets/088b057e-e778-4bfe-ab89-a2feb6d4ce1d">
+## Training data format
 
+`data/training_data.jsonl` expects one JSON object per line:
 
-## Technologies
-- **Python** - For scripting and backend logic.
-- **Streamlit** - For creating an interactive web interface.
-- **Regular Expressions** - For pattern matching of logs.
+```json
+{"text":"<file or line sample>","is_log":1,"log_type":"sys","platform":"linux"}
+```
 
-## Contributing
-Contributions are welcome! If you have any suggestions or improvements, please create an issue or submit a pull request.
-
-1. Fork the repository.
-2. Create your feature branch (`git checkout -b feature/your-feature`).
-3. Commit your changes (`git commit -m 'Add your feature'`).
-4. Push to the branch (`git push origin feature/your-feature`).
-5. Open a pull request.
-
+Notes:
+- For non-log rows, use `is_log: 0` and keep `log_type: "none"`, `platform: "unknown"`.
+- Multi-class (`log_type`, `platform`) models are trained only with rows where `is_log = 1`.
