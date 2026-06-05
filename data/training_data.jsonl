@@ -1,0 +1,400 @@
+{"text": "Jan 02 10:01:14 host1 systemd[101]: Started service unit-1", "is_log": 1, "log_type": "sys", "platform": "linux"}
+{"text": "2025-03-02 11:02:22 INFO com.apple.xpc.launchd[201] Notice service restart 1", "is_log": 1, "log_type": "sys", "platform": "macos"}
+{"text": "2025-04-02 12:03:31 kernel: irq 1 handled by module netdrv1", "is_log": 1, "log_type": "kernel", "platform": "linux"}
+{"text": "06/02/2025 13:04:44 WARN kernel32 win32 stack fault id=1", "is_log": 1, "log_type": "kernel", "platform": "windows"}
+{"text": "Jan 02 08:05:41 sshd[301]: Failed password for invalid user admin from 10.0.1.1", "is_log": 1, "log_type": "auth", "platform": "linux"}
+{"text": "06/02/2025 07:06:11 ERROR EventLog: Logon failure for user SERVICE_1", "is_log": 1, "log_type": "auth", "platform": "windows"}
+{"text": "2025-05-02T10:07:22.120Z|00001|ovs-vswitchd|WARN|bridge br-int dropped packet 1", "is_log": 1, "log_type": "ovs", "platform": "linux"}
+{"text": "2025-05-02T10:08:52.990Z|00401|ovsdb-server|INFO|openvswitch datapath reconnect darwin host 1", "is_log": 1, "log_type": "ovs", "platform": "macos"}
+{"text": "Jan 03 10:02:14 host2 systemd[102]: Started service unit-2", "is_log": 1, "log_type": "sys", "platform": "linux"}
+{"text": "2025-03-03 11:04:22 INFO com.apple.xpc.launchd[202] Notice service restart 2", "is_log": 1, "log_type": "sys", "platform": "macos"}
+{"text": "2025-04-03 12:06:31 kernel: irq 2 handled by module netdrv2", "is_log": 1, "log_type": "kernel", "platform": "linux"}
+{"text": "06/03/2025 13:08:44 WARN kernel32 win32 stack fault id=2", "is_log": 1, "log_type": "kernel", "platform": "windows"}
+{"text": "Jan 03 08:10:41 sshd[302]: Failed password for invalid user admin from 10.0.2.2", "is_log": 1, "log_type": "auth", "platform": "linux"}
+{"text": "06/03/2025 07:12:11 ERROR EventLog: Logon failure for user SERVICE_2", "is_log": 1, "log_type": "auth", "platform": "windows"}
+{"text": "2025-05-03T10:14:22.120Z|00002|ovs-vswitchd|WARN|bridge br-int dropped packet 2", "is_log": 1, "log_type": "ovs", "platform": "linux"}
+{"text": "2025-05-03T10:16:52.990Z|00402|ovsdb-server|INFO|openvswitch datapath reconnect darwin host 2", "is_log": 1, "log_type": "ovs", "platform": "macos"}
+{"text": "Jan 04 10:03:14 host3 systemd[103]: Started service unit-3", "is_log": 1, "log_type": "sys", "platform": "linux"}
+{"text": "2025-03-04 11:06:22 INFO com.apple.xpc.launchd[203] Notice service restart 3", "is_log": 1, "log_type": "sys", "platform": "macos"}
+{"text": "2025-04-04 12:09:31 kernel: irq 3 handled by module netdrv3", "is_log": 1, "log_type": "kernel", "platform": "linux"}
+{"text": "06/04/2025 13:12:44 WARN kernel32 win32 stack fault id=3", "is_log": 1, "log_type": "kernel", "platform": "windows"}
+{"text": "Jan 04 08:15:41 sshd[303]: Failed password for invalid user admin from 10.0.3.3", "is_log": 1, "log_type": "auth", "platform": "linux"}
+{"text": "06/04/2025 07:18:11 ERROR EventLog: Logon failure for user SERVICE_3", "is_log": 1, "log_type": "auth", "platform": "windows"}
+{"text": "2025-05-04T10:21:22.120Z|00003|ovs-vswitchd|WARN|bridge br-int dropped packet 3", "is_log": 1, "log_type": "ovs", "platform": "linux"}
+{"text": "2025-05-04T10:24:52.990Z|00403|ovsdb-server|INFO|openvswitch datapath reconnect darwin host 3", "is_log": 1, "log_type": "ovs", "platform": "macos"}
+{"text": "Jan 05 10:04:14 host4 systemd[104]: Started service unit-4", "is_log": 1, "log_type": "sys", "platform": "linux"}
+{"text": "2025-03-05 11:08:22 INFO com.apple.xpc.launchd[204] Notice service restart 4", "is_log": 1, "log_type": "sys", "platform": "macos"}
+{"text": "2025-04-05 12:12:31 kernel: irq 4 handled by module netdrv4", "is_log": 1, "log_type": "kernel", "platform": "linux"}
+{"text": "06/05/2025 13:16:44 WARN kernel32 win32 stack fault id=4", "is_log": 1, "log_type": "kernel", "platform": "windows"}
+{"text": "Jan 05 08:20:41 sshd[304]: Failed password for invalid user admin from 10.0.4.4", "is_log": 1, "log_type": "auth", "platform": "linux"}
+{"text": "06/05/2025 07:24:11 ERROR EventLog: Logon failure for user SERVICE_4", "is_log": 1, "log_type": "auth", "platform": "windows"}
+{"text": "2025-05-05T10:28:22.120Z|00004|ovs-vswitchd|WARN|bridge br-int dropped packet 4", "is_log": 1, "log_type": "ovs", "platform": "linux"}
+{"text": "2025-05-05T10:32:52.990Z|00404|ovsdb-server|INFO|openvswitch datapath reconnect darwin host 4", "is_log": 1, "log_type": "ovs", "platform": "macos"}
+{"text": "Jan 06 10:05:14 host5 systemd[105]: Started service unit-5", "is_log": 1, "log_type": "sys", "platform": "linux"}
+{"text": "2025-03-06 11:10:22 INFO com.apple.xpc.launchd[205] Notice service restart 5", "is_log": 1, "log_type": "sys", "platform": "macos"}
+{"text": "2025-04-06 12:15:31 kernel: irq 5 handled by module netdrv5", "is_log": 1, "log_type": "kernel", "platform": "linux"}
+{"text": "06/06/2025 13:20:44 WARN kernel32 win32 stack fault id=5", "is_log": 1, "log_type": "kernel", "platform": "windows"}
+{"text": "Jan 06 08:25:41 sshd[305]: Failed password for invalid user admin from 10.0.5.5", "is_log": 1, "log_type": "auth", "platform": "linux"}
+{"text": "06/06/2025 07:30:11 ERROR EventLog: Logon failure for user SERVICE_5", "is_log": 1, "log_type": "auth", "platform": "windows"}
+{"text": "2025-05-06T10:35:22.120Z|00005|ovs-vswitchd|WARN|bridge br-int dropped packet 5", "is_log": 1, "log_type": "ovs", "platform": "linux"}
+{"text": "2025-05-06T10:40:52.990Z|00405|ovsdb-server|INFO|openvswitch datapath reconnect darwin host 5", "is_log": 1, "log_type": "ovs", "platform": "macos"}
+{"text": "Jan 07 10:06:14 host6 systemd[106]: Started service unit-6", "is_log": 1, "log_type": "sys", "platform": "linux"}
+{"text": "2025-03-07 11:12:22 INFO com.apple.xpc.launchd[206] Notice service restart 6", "is_log": 1, "log_type": "sys", "platform": "macos"}
+{"text": "2025-04-07 12:18:31 kernel: irq 6 handled by module netdrv6", "is_log": 1, "log_type": "kernel", "platform": "linux"}
+{"text": "06/07/2025 13:24:44 WARN kernel32 win32 stack fault id=6", "is_log": 1, "log_type": "kernel", "platform": "windows"}
+{"text": "Jan 07 08:30:41 sshd[306]: Failed password for invalid user admin from 10.0.6.6", "is_log": 1, "log_type": "auth", "platform": "linux"}
+{"text": "06/07/2025 07:36:11 ERROR EventLog: Logon failure for user SERVICE_6", "is_log": 1, "log_type": "auth", "platform": "windows"}
+{"text": "2025-05-07T10:42:22.120Z|00006|ovs-vswitchd|WARN|bridge br-int dropped packet 6", "is_log": 1, "log_type": "ovs", "platform": "linux"}
+{"text": "2025-05-07T10:48:52.990Z|00406|ovsdb-server|INFO|openvswitch datapath reconnect darwin host 6", "is_log": 1, "log_type": "ovs", "platform": "macos"}
+{"text": "Jan 08 10:07:14 host7 systemd[107]: Started service unit-7", "is_log": 1, "log_type": "sys", "platform": "linux"}
+{"text": "2025-03-08 11:14:22 INFO com.apple.xpc.launchd[207] Notice service restart 7", "is_log": 1, "log_type": "sys", "platform": "macos"}
+{"text": "2025-04-08 12:21:31 kernel: irq 7 handled by module netdrv0", "is_log": 1, "log_type": "kernel", "platform": "linux"}
+{"text": "06/08/2025 13:28:44 WARN kernel32 win32 stack fault id=7", "is_log": 1, "log_type": "kernel", "platform": "windows"}
+{"text": "Jan 08 08:35:41 sshd[307]: Failed password for invalid user admin from 10.0.7.7", "is_log": 1, "log_type": "auth", "platform": "linux"}
+{"text": "06/08/2025 07:42:11 ERROR EventLog: Logon failure for user SERVICE_7", "is_log": 1, "log_type": "auth", "platform": "windows"}
+{"text": "2025-05-08T10:49:22.120Z|00007|ovs-vswitchd|WARN|bridge br-int dropped packet 7", "is_log": 1, "log_type": "ovs", "platform": "linux"}
+{"text": "2025-05-08T10:56:52.990Z|00407|ovsdb-server|INFO|openvswitch datapath reconnect darwin host 7", "is_log": 1, "log_type": "ovs", "platform": "macos"}
+{"text": "Jan 09 10:08:14 host8 systemd[108]: Started service unit-8", "is_log": 1, "log_type": "sys", "platform": "linux"}
+{"text": "2025-03-09 11:16:22 INFO com.apple.xpc.launchd[208] Notice service restart 8", "is_log": 1, "log_type": "sys", "platform": "macos"}
+{"text": "2025-04-09 12:24:31 kernel: irq 8 handled by module netdrv1", "is_log": 1, "log_type": "kernel", "platform": "linux"}
+{"text": "06/09/2025 13:32:44 WARN kernel32 win32 stack fault id=8", "is_log": 1, "log_type": "kernel", "platform": "windows"}
+{"text": "Jan 09 08:40:41 sshd[308]: Failed password for invalid user admin from 10.0.8.8", "is_log": 1, "log_type": "auth", "platform": "linux"}
+{"text": "06/09/2025 07:48:11 ERROR EventLog: Logon failure for user SERVICE_8", "is_log": 1, "log_type": "auth", "platform": "windows"}
+{"text": "2025-05-09T10:56:22.120Z|00008|ovs-vswitchd|WARN|bridge br-int dropped packet 8", "is_log": 1, "log_type": "ovs", "platform": "linux"}
+{"text": "2025-05-09T10:04:52.990Z|00408|ovsdb-server|INFO|openvswitch datapath reconnect darwin host 8", "is_log": 1, "log_type": "ovs", "platform": "macos"}
+{"text": "Jan 10 10:09:14 host9 systemd[109]: Started service unit-9", "is_log": 1, "log_type": "sys", "platform": "linux"}
+{"text": "2025-03-10 11:18:22 INFO com.apple.xpc.launchd[209] Notice service restart 9", "is_log": 1, "log_type": "sys", "platform": "macos"}
+{"text": "2025-04-10 12:27:31 kernel: irq 9 handled by module netdrv2", "is_log": 1, "log_type": "kernel", "platform": "linux"}
+{"text": "06/10/2025 13:36:44 WARN kernel32 win32 stack fault id=9", "is_log": 1, "log_type": "kernel", "platform": "windows"}
+{"text": "Jan 10 08:45:41 sshd[309]: Failed password for invalid user admin from 10.0.9.9", "is_log": 1, "log_type": "auth", "platform": "linux"}
+{"text": "06/10/2025 07:54:11 ERROR EventLog: Logon failure for user SERVICE_9", "is_log": 1, "log_type": "auth", "platform": "windows"}
+{"text": "2025-05-10T10:03:22.120Z|00009|ovs-vswitchd|WARN|bridge br-int dropped packet 9", "is_log": 1, "log_type": "ovs", "platform": "linux"}
+{"text": "2025-05-10T10:12:52.990Z|00409|ovsdb-server|INFO|openvswitch datapath reconnect darwin host 9", "is_log": 1, "log_type": "ovs", "platform": "macos"}
+{"text": "Jan 11 10:10:14 host10 systemd[110]: Started service unit-10", "is_log": 1, "log_type": "sys", "platform": "linux"}
+{"text": "2025-03-11 11:20:22 INFO com.apple.xpc.launchd[210] Notice service restart 10", "is_log": 1, "log_type": "sys", "platform": "macos"}
+{"text": "2025-04-11 12:30:31 kernel: irq 10 handled by module netdrv3", "is_log": 1, "log_type": "kernel", "platform": "linux"}
+{"text": "06/11/2025 13:40:44 WARN kernel32 win32 stack fault id=10", "is_log": 1, "log_type": "kernel", "platform": "windows"}
+{"text": "Jan 11 08:50:41 sshd[310]: Failed password for invalid user admin from 10.0.0.10", "is_log": 1, "log_type": "auth", "platform": "linux"}
+{"text": "06/11/2025 07:00:11 ERROR EventLog: Logon failure for user SERVICE_10", "is_log": 1, "log_type": "auth", "platform": "windows"}
+{"text": "2025-05-11T10:10:22.120Z|00010|ovs-vswitchd|WARN|bridge br-int dropped packet 10", "is_log": 1, "log_type": "ovs", "platform": "linux"}
+{"text": "2025-05-11T10:20:52.990Z|00410|ovsdb-server|INFO|openvswitch datapath reconnect darwin host 10", "is_log": 1, "log_type": "ovs", "platform": "macos"}
+{"text": "Jan 12 10:11:14 host11 systemd[111]: Started service unit-11", "is_log": 1, "log_type": "sys", "platform": "linux"}
+{"text": "2025-03-12 11:22:22 INFO com.apple.xpc.launchd[211] Notice service restart 11", "is_log": 1, "log_type": "sys", "platform": "macos"}
+{"text": "2025-04-12 12:33:31 kernel: irq 11 handled by module netdrv4", "is_log": 1, "log_type": "kernel", "platform": "linux"}
+{"text": "06/12/2025 13:44:44 WARN kernel32 win32 stack fault id=11", "is_log": 1, "log_type": "kernel", "platform": "windows"}
+{"text": "Jan 12 08:55:41 sshd[311]: Failed password for invalid user admin from 10.0.1.11", "is_log": 1, "log_type": "auth", "platform": "linux"}
+{"text": "06/12/2025 07:06:11 ERROR EventLog: Logon failure for user SERVICE_11", "is_log": 1, "log_type": "auth", "platform": "windows"}
+{"text": "2025-05-12T10:17:22.120Z|00011|ovs-vswitchd|WARN|bridge br-int dropped packet 11", "is_log": 1, "log_type": "ovs", "platform": "linux"}
+{"text": "2025-05-12T10:28:52.990Z|00411|ovsdb-server|INFO|openvswitch datapath reconnect darwin host 11", "is_log": 1, "log_type": "ovs", "platform": "macos"}
+{"text": "Jan 13 10:12:14 host12 systemd[112]: Started service unit-12", "is_log": 1, "log_type": "sys", "platform": "linux"}
+{"text": "2025-03-13 11:24:22 INFO com.apple.xpc.launchd[212] Notice service restart 12", "is_log": 1, "log_type": "sys", "platform": "macos"}
+{"text": "2025-04-13 12:36:31 kernel: irq 12 handled by module netdrv5", "is_log": 1, "log_type": "kernel", "platform": "linux"}
+{"text": "06/13/2025 13:48:44 WARN kernel32 win32 stack fault id=12", "is_log": 1, "log_type": "kernel", "platform": "windows"}
+{"text": "Jan 13 08:00:41 sshd[312]: Failed password for invalid user admin from 10.0.2.12", "is_log": 1, "log_type": "auth", "platform": "linux"}
+{"text": "06/13/2025 07:12:11 ERROR EventLog: Logon failure for user SERVICE_12", "is_log": 1, "log_type": "auth", "platform": "windows"}
+{"text": "2025-05-13T10:24:22.120Z|00012|ovs-vswitchd|WARN|bridge br-int dropped packet 12", "is_log": 1, "log_type": "ovs", "platform": "linux"}
+{"text": "2025-05-13T10:36:52.990Z|00412|ovsdb-server|INFO|openvswitch datapath reconnect darwin host 12", "is_log": 1, "log_type": "ovs", "platform": "macos"}
+{"text": "Jan 14 10:13:14 host13 systemd[113]: Started service unit-13", "is_log": 1, "log_type": "sys", "platform": "linux"}
+{"text": "2025-03-14 11:26:22 INFO com.apple.xpc.launchd[213] Notice service restart 13", "is_log": 1, "log_type": "sys", "platform": "macos"}
+{"text": "2025-04-14 12:39:31 kernel: irq 13 handled by module netdrv6", "is_log": 1, "log_type": "kernel", "platform": "linux"}
+{"text": "06/14/2025 13:52:44 WARN kernel32 win32 stack fault id=13", "is_log": 1, "log_type": "kernel", "platform": "windows"}
+{"text": "Jan 14 08:05:41 sshd[313]: Failed password for invalid user admin from 10.0.3.13", "is_log": 1, "log_type": "auth", "platform": "linux"}
+{"text": "06/14/2025 07:18:11 ERROR EventLog: Logon failure for user SERVICE_13", "is_log": 1, "log_type": "auth", "platform": "windows"}
+{"text": "2025-05-14T10:31:22.120Z|00013|ovs-vswitchd|WARN|bridge br-int dropped packet 13", "is_log": 1, "log_type": "ovs", "platform": "linux"}
+{"text": "2025-05-14T10:44:52.990Z|00413|ovsdb-server|INFO|openvswitch datapath reconnect darwin host 13", "is_log": 1, "log_type": "ovs", "platform": "macos"}
+{"text": "Jan 15 10:14:14 host14 systemd[114]: Started service unit-14", "is_log": 1, "log_type": "sys", "platform": "linux"}
+{"text": "2025-03-15 11:28:22 INFO com.apple.xpc.launchd[214] Notice service restart 14", "is_log": 1, "log_type": "sys", "platform": "macos"}
+{"text": "2025-04-15 12:42:31 kernel: irq 14 handled by module netdrv0", "is_log": 1, "log_type": "kernel", "platform": "linux"}
+{"text": "06/15/2025 13:56:44 WARN kernel32 win32 stack fault id=14", "is_log": 1, "log_type": "kernel", "platform": "windows"}
+{"text": "Jan 15 08:10:41 sshd[314]: Failed password for invalid user admin from 10.0.4.14", "is_log": 1, "log_type": "auth", "platform": "linux"}
+{"text": "06/15/2025 07:24:11 ERROR EventLog: Logon failure for user SERVICE_14", "is_log": 1, "log_type": "auth", "platform": "windows"}
+{"text": "2025-05-15T10:38:22.120Z|00014|ovs-vswitchd|WARN|bridge br-int dropped packet 14", "is_log": 1, "log_type": "ovs", "platform": "linux"}
+{"text": "2025-05-15T10:52:52.990Z|00414|ovsdb-server|INFO|openvswitch datapath reconnect darwin host 14", "is_log": 1, "log_type": "ovs", "platform": "macos"}
+{"text": "Jan 16 10:15:14 host15 systemd[115]: Started service unit-15", "is_log": 1, "log_type": "sys", "platform": "linux"}
+{"text": "2025-03-16 11:30:22 INFO com.apple.xpc.launchd[215] Notice service restart 15", "is_log": 1, "log_type": "sys", "platform": "macos"}
+{"text": "2025-04-16 12:45:31 kernel: irq 15 handled by module netdrv1", "is_log": 1, "log_type": "kernel", "platform": "linux"}
+{"text": "06/16/2025 13:00:44 WARN kernel32 win32 stack fault id=15", "is_log": 1, "log_type": "kernel", "platform": "windows"}
+{"text": "Jan 16 08:15:41 sshd[315]: Failed password for invalid user admin from 10.0.5.15", "is_log": 1, "log_type": "auth", "platform": "linux"}
+{"text": "06/16/2025 07:30:11 ERROR EventLog: Logon failure for user SERVICE_15", "is_log": 1, "log_type": "auth", "platform": "windows"}
+{"text": "2025-05-16T10:45:22.120Z|00015|ovs-vswitchd|WARN|bridge br-int dropped packet 15", "is_log": 1, "log_type": "ovs", "platform": "linux"}
+{"text": "2025-05-16T10:00:52.990Z|00415|ovsdb-server|INFO|openvswitch datapath reconnect darwin host 15", "is_log": 1, "log_type": "ovs", "platform": "macos"}
+{"text": "Jan 17 10:16:14 host16 systemd[116]: Started service unit-16", "is_log": 1, "log_type": "sys", "platform": "linux"}
+{"text": "2025-03-17 11:32:22 INFO com.apple.xpc.launchd[216] Notice service restart 16", "is_log": 1, "log_type": "sys", "platform": "macos"}
+{"text": "2025-04-17 12:48:31 kernel: irq 16 handled by module netdrv2", "is_log": 1, "log_type": "kernel", "platform": "linux"}
+{"text": "06/17/2025 13:04:44 WARN kernel32 win32 stack fault id=16", "is_log": 1, "log_type": "kernel", "platform": "windows"}
+{"text": "Jan 17 08:20:41 sshd[316]: Failed password for invalid user admin from 10.0.6.16", "is_log": 1, "log_type": "auth", "platform": "linux"}
+{"text": "06/17/2025 07:36:11 ERROR EventLog: Logon failure for user SERVICE_16", "is_log": 1, "log_type": "auth", "platform": "windows"}
+{"text": "2025-05-17T10:52:22.120Z|00016|ovs-vswitchd|WARN|bridge br-int dropped packet 16", "is_log": 1, "log_type": "ovs", "platform": "linux"}
+{"text": "2025-05-17T10:08:52.990Z|00416|ovsdb-server|INFO|openvswitch datapath reconnect darwin host 16", "is_log": 1, "log_type": "ovs", "platform": "macos"}
+{"text": "Jan 18 10:17:14 host17 systemd[117]: Started service unit-17", "is_log": 1, "log_type": "sys", "platform": "linux"}
+{"text": "2025-03-18 11:34:22 INFO com.apple.xpc.launchd[217] Notice service restart 17", "is_log": 1, "log_type": "sys", "platform": "macos"}
+{"text": "2025-04-18 12:51:31 kernel: irq 17 handled by module netdrv3", "is_log": 1, "log_type": "kernel", "platform": "linux"}
+{"text": "06/18/2025 13:08:44 WARN kernel32 win32 stack fault id=17", "is_log": 1, "log_type": "kernel", "platform": "windows"}
+{"text": "Jan 18 08:25:41 sshd[317]: Failed password for invalid user admin from 10.0.7.17", "is_log": 1, "log_type": "auth", "platform": "linux"}
+{"text": "06/18/2025 07:42:11 ERROR EventLog: Logon failure for user SERVICE_17", "is_log": 1, "log_type": "auth", "platform": "windows"}
+{"text": "2025-05-18T10:59:22.120Z|00017|ovs-vswitchd|WARN|bridge br-int dropped packet 17", "is_log": 1, "log_type": "ovs", "platform": "linux"}
+{"text": "2025-05-18T10:16:52.990Z|00417|ovsdb-server|INFO|openvswitch datapath reconnect darwin host 17", "is_log": 1, "log_type": "ovs", "platform": "macos"}
+{"text": "Jan 19 10:18:14 host18 systemd[118]: Started service unit-18", "is_log": 1, "log_type": "sys", "platform": "linux"}
+{"text": "2025-03-19 11:36:22 INFO com.apple.xpc.launchd[218] Notice service restart 18", "is_log": 1, "log_type": "sys", "platform": "macos"}
+{"text": "2025-04-19 12:54:31 kernel: irq 18 handled by module netdrv4", "is_log": 1, "log_type": "kernel", "platform": "linux"}
+{"text": "06/19/2025 13:12:44 WARN kernel32 win32 stack fault id=18", "is_log": 1, "log_type": "kernel", "platform": "windows"}
+{"text": "Jan 19 08:30:41 sshd[318]: Failed password for invalid user admin from 10.0.8.18", "is_log": 1, "log_type": "auth", "platform": "linux"}
+{"text": "06/19/2025 07:48:11 ERROR EventLog: Logon failure for user SERVICE_18", "is_log": 1, "log_type": "auth", "platform": "windows"}
+{"text": "2025-05-19T10:06:22.120Z|00018|ovs-vswitchd|WARN|bridge br-int dropped packet 18", "is_log": 1, "log_type": "ovs", "platform": "linux"}
+{"text": "2025-05-19T10:24:52.990Z|00418|ovsdb-server|INFO|openvswitch datapath reconnect darwin host 18", "is_log": 1, "log_type": "ovs", "platform": "macos"}
+{"text": "Jan 20 10:19:14 host19 systemd[119]: Started service unit-19", "is_log": 1, "log_type": "sys", "platform": "linux"}
+{"text": "2025-03-20 11:38:22 INFO com.apple.xpc.launchd[219] Notice service restart 19", "is_log": 1, "log_type": "sys", "platform": "macos"}
+{"text": "2025-04-20 12:57:31 kernel: irq 19 handled by module netdrv5", "is_log": 1, "log_type": "kernel", "platform": "linux"}
+{"text": "06/20/2025 13:16:44 WARN kernel32 win32 stack fault id=19", "is_log": 1, "log_type": "kernel", "platform": "windows"}
+{"text": "Jan 20 08:35:41 sshd[319]: Failed password for invalid user admin from 10.0.9.19", "is_log": 1, "log_type": "auth", "platform": "linux"}
+{"text": "06/20/2025 07:54:11 ERROR EventLog: Logon failure for user SERVICE_19", "is_log": 1, "log_type": "auth", "platform": "windows"}
+{"text": "2025-05-20T10:13:22.120Z|00019|ovs-vswitchd|WARN|bridge br-int dropped packet 19", "is_log": 1, "log_type": "ovs", "platform": "linux"}
+{"text": "2025-05-20T10:32:52.990Z|00419|ovsdb-server|INFO|openvswitch datapath reconnect darwin host 19", "is_log": 1, "log_type": "ovs", "platform": "macos"}
+{"text": "Jan 21 10:20:14 host20 systemd[120]: Started service unit-20", "is_log": 1, "log_type": "sys", "platform": "linux"}
+{"text": "2025-03-21 11:40:22 INFO com.apple.xpc.launchd[220] Notice service restart 20", "is_log": 1, "log_type": "sys", "platform": "macos"}
+{"text": "2025-04-21 12:00:31 kernel: irq 20 handled by module netdrv6", "is_log": 1, "log_type": "kernel", "platform": "linux"}
+{"text": "06/21/2025 13:20:44 WARN kernel32 win32 stack fault id=20", "is_log": 1, "log_type": "kernel", "platform": "windows"}
+{"text": "Jan 21 08:40:41 sshd[320]: Failed password for invalid user admin from 10.0.0.20", "is_log": 1, "log_type": "auth", "platform": "linux"}
+{"text": "06/21/2025 07:00:11 ERROR EventLog: Logon failure for user SERVICE_20", "is_log": 1, "log_type": "auth", "platform": "windows"}
+{"text": "2025-05-21T10:20:22.120Z|00020|ovs-vswitchd|WARN|bridge br-int dropped packet 20", "is_log": 1, "log_type": "ovs", "platform": "linux"}
+{"text": "2025-05-21T10:40:52.990Z|00420|ovsdb-server|INFO|openvswitch datapath reconnect darwin host 20", "is_log": 1, "log_type": "ovs", "platform": "macos"}
+{"text": "Jan 22 10:21:14 host21 systemd[121]: Started service unit-21", "is_log": 1, "log_type": "sys", "platform": "linux"}
+{"text": "2025-03-22 11:42:22 INFO com.apple.xpc.launchd[221] Notice service restart 21", "is_log": 1, "log_type": "sys", "platform": "macos"}
+{"text": "2025-04-22 12:03:31 kernel: irq 21 handled by module netdrv0", "is_log": 1, "log_type": "kernel", "platform": "linux"}
+{"text": "06/22/2025 13:24:44 WARN kernel32 win32 stack fault id=21", "is_log": 1, "log_type": "kernel", "platform": "windows"}
+{"text": "Jan 22 08:45:41 sshd[321]: Failed password for invalid user admin from 10.0.1.21", "is_log": 1, "log_type": "auth", "platform": "linux"}
+{"text": "06/22/2025 07:06:11 ERROR EventLog: Logon failure for user SERVICE_21", "is_log": 1, "log_type": "auth", "platform": "windows"}
+{"text": "2025-05-22T10:27:22.120Z|00021|ovs-vswitchd|WARN|bridge br-int dropped packet 21", "is_log": 1, "log_type": "ovs", "platform": "linux"}
+{"text": "2025-05-22T10:48:52.990Z|00421|ovsdb-server|INFO|openvswitch datapath reconnect darwin host 21", "is_log": 1, "log_type": "ovs", "platform": "macos"}
+{"text": "Jan 23 10:22:14 host22 systemd[122]: Started service unit-22", "is_log": 1, "log_type": "sys", "platform": "linux"}
+{"text": "2025-03-23 11:44:22 INFO com.apple.xpc.launchd[222] Notice service restart 22", "is_log": 1, "log_type": "sys", "platform": "macos"}
+{"text": "2025-04-23 12:06:31 kernel: irq 22 handled by module netdrv1", "is_log": 1, "log_type": "kernel", "platform": "linux"}
+{"text": "06/23/2025 13:28:44 WARN kernel32 win32 stack fault id=22", "is_log": 1, "log_type": "kernel", "platform": "windows"}
+{"text": "Jan 23 08:50:41 sshd[322]: Failed password for invalid user admin from 10.0.2.22", "is_log": 1, "log_type": "auth", "platform": "linux"}
+{"text": "06/23/2025 07:12:11 ERROR EventLog: Logon failure for user SERVICE_22", "is_log": 1, "log_type": "auth", "platform": "windows"}
+{"text": "2025-05-23T10:34:22.120Z|00022|ovs-vswitchd|WARN|bridge br-int dropped packet 22", "is_log": 1, "log_type": "ovs", "platform": "linux"}
+{"text": "2025-05-23T10:56:52.990Z|00422|ovsdb-server|INFO|openvswitch datapath reconnect darwin host 22", "is_log": 1, "log_type": "ovs", "platform": "macos"}
+{"text": "Jan 24 10:23:14 host23 systemd[123]: Started service unit-23", "is_log": 1, "log_type": "sys", "platform": "linux"}
+{"text": "2025-03-24 11:46:22 INFO com.apple.xpc.launchd[223] Notice service restart 23", "is_log": 1, "log_type": "sys", "platform": "macos"}
+{"text": "2025-04-24 12:09:31 kernel: irq 23 handled by module netdrv2", "is_log": 1, "log_type": "kernel", "platform": "linux"}
+{"text": "06/24/2025 13:32:44 WARN kernel32 win32 stack fault id=23", "is_log": 1, "log_type": "kernel", "platform": "windows"}
+{"text": "Jan 24 08:55:41 sshd[323]: Failed password for invalid user admin from 10.0.3.23", "is_log": 1, "log_type": "auth", "platform": "linux"}
+{"text": "06/24/2025 07:18:11 ERROR EventLog: Logon failure for user SERVICE_23", "is_log": 1, "log_type": "auth", "platform": "windows"}
+{"text": "2025-05-24T10:41:22.120Z|00023|ovs-vswitchd|WARN|bridge br-int dropped packet 23", "is_log": 1, "log_type": "ovs", "platform": "linux"}
+{"text": "2025-05-24T10:04:52.990Z|00423|ovsdb-server|INFO|openvswitch datapath reconnect darwin host 23", "is_log": 1, "log_type": "ovs", "platform": "macos"}
+{"text": "Jan 25 10:24:14 host24 systemd[124]: Started service unit-24", "is_log": 1, "log_type": "sys", "platform": "linux"}
+{"text": "2025-03-25 11:48:22 INFO com.apple.xpc.launchd[224] Notice service restart 24", "is_log": 1, "log_type": "sys", "platform": "macos"}
+{"text": "2025-04-25 12:12:31 kernel: irq 24 handled by module netdrv3", "is_log": 1, "log_type": "kernel", "platform": "linux"}
+{"text": "06/25/2025 13:36:44 WARN kernel32 win32 stack fault id=24", "is_log": 1, "log_type": "kernel", "platform": "windows"}
+{"text": "Jan 25 08:00:41 sshd[324]: Failed password for invalid user admin from 10.0.4.24", "is_log": 1, "log_type": "auth", "platform": "linux"}
+{"text": "06/25/2025 07:24:11 ERROR EventLog: Logon failure for user SERVICE_24", "is_log": 1, "log_type": "auth", "platform": "windows"}
+{"text": "2025-05-25T10:48:22.120Z|00024|ovs-vswitchd|WARN|bridge br-int dropped packet 24", "is_log": 1, "log_type": "ovs", "platform": "linux"}
+{"text": "2025-05-25T10:12:52.990Z|00424|ovsdb-server|INFO|openvswitch datapath reconnect darwin host 24", "is_log": 1, "log_type": "ovs", "platform": "macos"}
+{"text": "Jan 26 10:25:14 host25 systemd[125]: Started service unit-25", "is_log": 1, "log_type": "sys", "platform": "linux"}
+{"text": "2025-03-26 11:50:22 INFO com.apple.xpc.launchd[225] Notice service restart 25", "is_log": 1, "log_type": "sys", "platform": "macos"}
+{"text": "2025-04-26 12:15:31 kernel: irq 25 handled by module netdrv4", "is_log": 1, "log_type": "kernel", "platform": "linux"}
+{"text": "06/26/2025 13:40:44 WARN kernel32 win32 stack fault id=25", "is_log": 1, "log_type": "kernel", "platform": "windows"}
+{"text": "Jan 26 08:05:41 sshd[325]: Failed password for invalid user admin from 10.0.5.25", "is_log": 1, "log_type": "auth", "platform": "linux"}
+{"text": "06/26/2025 07:30:11 ERROR EventLog: Logon failure for user SERVICE_25", "is_log": 1, "log_type": "auth", "platform": "windows"}
+{"text": "2025-05-26T10:55:22.120Z|00025|ovs-vswitchd|WARN|bridge br-int dropped packet 25", "is_log": 1, "log_type": "ovs", "platform": "linux"}
+{"text": "2025-05-26T10:20:52.990Z|00425|ovsdb-server|INFO|openvswitch datapath reconnect darwin host 25", "is_log": 1, "log_type": "ovs", "platform": "macos"}
+{"text": "Jan 27 10:26:14 host26 systemd[126]: Started service unit-26", "is_log": 1, "log_type": "sys", "platform": "linux"}
+{"text": "2025-03-27 11:52:22 INFO com.apple.xpc.launchd[226] Notice service restart 26", "is_log": 1, "log_type": "sys", "platform": "macos"}
+{"text": "2025-04-27 12:18:31 kernel: irq 26 handled by module netdrv5", "is_log": 1, "log_type": "kernel", "platform": "linux"}
+{"text": "06/27/2025 13:44:44 WARN kernel32 win32 stack fault id=26", "is_log": 1, "log_type": "kernel", "platform": "windows"}
+{"text": "Jan 27 08:10:41 sshd[326]: Failed password for invalid user admin from 10.0.6.26", "is_log": 1, "log_type": "auth", "platform": "linux"}
+{"text": "06/27/2025 07:36:11 ERROR EventLog: Logon failure for user SERVICE_26", "is_log": 1, "log_type": "auth", "platform": "windows"}
+{"text": "2025-05-27T10:02:22.120Z|00026|ovs-vswitchd|WARN|bridge br-int dropped packet 26", "is_log": 1, "log_type": "ovs", "platform": "linux"}
+{"text": "2025-05-27T10:28:52.990Z|00426|ovsdb-server|INFO|openvswitch datapath reconnect darwin host 26", "is_log": 1, "log_type": "ovs", "platform": "macos"}
+{"text": "Jan 28 10:27:14 host27 systemd[127]: Started service unit-27", "is_log": 1, "log_type": "sys", "platform": "linux"}
+{"text": "2025-03-28 11:54:22 INFO com.apple.xpc.launchd[227] Notice service restart 27", "is_log": 1, "log_type": "sys", "platform": "macos"}
+{"text": "2025-04-28 12:21:31 kernel: irq 27 handled by module netdrv6", "is_log": 1, "log_type": "kernel", "platform": "linux"}
+{"text": "06/28/2025 13:48:44 WARN kernel32 win32 stack fault id=27", "is_log": 1, "log_type": "kernel", "platform": "windows"}
+{"text": "Jan 28 08:15:41 sshd[327]: Failed password for invalid user admin from 10.0.7.27", "is_log": 1, "log_type": "auth", "platform": "linux"}
+{"text": "06/28/2025 07:42:11 ERROR EventLog: Logon failure for user SERVICE_27", "is_log": 1, "log_type": "auth", "platform": "windows"}
+{"text": "2025-05-28T10:09:22.120Z|00027|ovs-vswitchd|WARN|bridge br-int dropped packet 27", "is_log": 1, "log_type": "ovs", "platform": "linux"}
+{"text": "2025-05-28T10:36:52.990Z|00427|ovsdb-server|INFO|openvswitch datapath reconnect darwin host 27", "is_log": 1, "log_type": "ovs", "platform": "macos"}
+{"text": "Jan 01 10:28:14 host28 systemd[128]: Started service unit-28", "is_log": 1, "log_type": "sys", "platform": "linux"}
+{"text": "2025-03-01 11:56:22 INFO com.apple.xpc.launchd[228] Notice service restart 28", "is_log": 1, "log_type": "sys", "platform": "macos"}
+{"text": "2025-04-01 12:24:31 kernel: irq 28 handled by module netdrv0", "is_log": 1, "log_type": "kernel", "platform": "linux"}
+{"text": "06/01/2025 13:52:44 WARN kernel32 win32 stack fault id=28", "is_log": 1, "log_type": "kernel", "platform": "windows"}
+{"text": "Jan 01 08:20:41 sshd[328]: Failed password for invalid user admin from 10.0.8.28", "is_log": 1, "log_type": "auth", "platform": "linux"}
+{"text": "06/01/2025 07:48:11 ERROR EventLog: Logon failure for user SERVICE_28", "is_log": 1, "log_type": "auth", "platform": "windows"}
+{"text": "2025-05-01T10:16:22.120Z|00028|ovs-vswitchd|WARN|bridge br-int dropped packet 28", "is_log": 1, "log_type": "ovs", "platform": "linux"}
+{"text": "2025-05-01T10:44:52.990Z|00428|ovsdb-server|INFO|openvswitch datapath reconnect darwin host 28", "is_log": 1, "log_type": "ovs", "platform": "macos"}
+{"text": "Jan 02 10:29:14 host29 systemd[129]: Started service unit-29", "is_log": 1, "log_type": "sys", "platform": "linux"}
+{"text": "2025-03-02 11:58:22 INFO com.apple.xpc.launchd[229] Notice service restart 29", "is_log": 1, "log_type": "sys", "platform": "macos"}
+{"text": "2025-04-02 12:27:31 kernel: irq 29 handled by module netdrv1", "is_log": 1, "log_type": "kernel", "platform": "linux"}
+{"text": "06/02/2025 13:56:44 WARN kernel32 win32 stack fault id=29", "is_log": 1, "log_type": "kernel", "platform": "windows"}
+{"text": "Jan 02 08:25:41 sshd[329]: Failed password for invalid user admin from 10.0.9.29", "is_log": 1, "log_type": "auth", "platform": "linux"}
+{"text": "06/02/2025 07:54:11 ERROR EventLog: Logon failure for user SERVICE_29", "is_log": 1, "log_type": "auth", "platform": "windows"}
+{"text": "2025-05-02T10:23:22.120Z|00029|ovs-vswitchd|WARN|bridge br-int dropped packet 29", "is_log": 1, "log_type": "ovs", "platform": "linux"}
+{"text": "2025-05-02T10:52:52.990Z|00429|ovsdb-server|INFO|openvswitch datapath reconnect darwin host 29", "is_log": 1, "log_type": "ovs", "platform": "macos"}
+{"text": "Jan 03 10:30:14 host30 systemd[130]: Started service unit-30", "is_log": 1, "log_type": "sys", "platform": "linux"}
+{"text": "2025-03-03 11:00:22 INFO com.apple.xpc.launchd[230] Notice service restart 30", "is_log": 1, "log_type": "sys", "platform": "macos"}
+{"text": "2025-04-03 12:30:31 kernel: irq 30 handled by module netdrv2", "is_log": 1, "log_type": "kernel", "platform": "linux"}
+{"text": "06/03/2025 13:00:44 WARN kernel32 win32 stack fault id=30", "is_log": 1, "log_type": "kernel", "platform": "windows"}
+{"text": "Jan 03 08:30:41 sshd[330]: Failed password for invalid user admin from 10.0.0.30", "is_log": 1, "log_type": "auth", "platform": "linux"}
+{"text": "06/03/2025 07:00:11 ERROR EventLog: Logon failure for user SERVICE_30", "is_log": 1, "log_type": "auth", "platform": "windows"}
+{"text": "2025-05-03T10:30:22.120Z|00030|ovs-vswitchd|WARN|bridge br-int dropped packet 30", "is_log": 1, "log_type": "ovs", "platform": "linux"}
+{"text": "2025-05-03T10:00:52.990Z|00430|ovsdb-server|INFO|openvswitch datapath reconnect darwin host 30", "is_log": 1, "log_type": "ovs", "platform": "macos"}
+{"text": "Jan 04 10:31:14 host31 systemd[131]: Started service unit-31", "is_log": 1, "log_type": "sys", "platform": "linux"}
+{"text": "2025-03-04 11:02:22 INFO com.apple.xpc.launchd[231] Notice service restart 31", "is_log": 1, "log_type": "sys", "platform": "macos"}
+{"text": "2025-04-04 12:33:31 kernel: irq 31 handled by module netdrv3", "is_log": 1, "log_type": "kernel", "platform": "linux"}
+{"text": "06/04/2025 13:04:44 WARN kernel32 win32 stack fault id=31", "is_log": 1, "log_type": "kernel", "platform": "windows"}
+{"text": "Jan 04 08:35:41 sshd[331]: Failed password for invalid user admin from 10.0.1.31", "is_log": 1, "log_type": "auth", "platform": "linux"}
+{"text": "06/04/2025 07:06:11 ERROR EventLog: Logon failure for user SERVICE_31", "is_log": 1, "log_type": "auth", "platform": "windows"}
+{"text": "2025-05-04T10:37:22.120Z|00031|ovs-vswitchd|WARN|bridge br-int dropped packet 31", "is_log": 1, "log_type": "ovs", "platform": "linux"}
+{"text": "2025-05-04T10:08:52.990Z|00431|ovsdb-server|INFO|openvswitch datapath reconnect darwin host 31", "is_log": 1, "log_type": "ovs", "platform": "macos"}
+{"text": "Jan 05 10:32:14 host32 systemd[132]: Started service unit-32", "is_log": 1, "log_type": "sys", "platform": "linux"}
+{"text": "2025-03-05 11:04:22 INFO com.apple.xpc.launchd[232] Notice service restart 32", "is_log": 1, "log_type": "sys", "platform": "macos"}
+{"text": "2025-04-05 12:36:31 kernel: irq 32 handled by module netdrv4", "is_log": 1, "log_type": "kernel", "platform": "linux"}
+{"text": "06/05/2025 13:08:44 WARN kernel32 win32 stack fault id=32", "is_log": 1, "log_type": "kernel", "platform": "windows"}
+{"text": "Jan 05 08:40:41 sshd[332]: Failed password for invalid user admin from 10.0.2.32", "is_log": 1, "log_type": "auth", "platform": "linux"}
+{"text": "06/05/2025 07:12:11 ERROR EventLog: Logon failure for user SERVICE_32", "is_log": 1, "log_type": "auth", "platform": "windows"}
+{"text": "2025-05-05T10:44:22.120Z|00032|ovs-vswitchd|WARN|bridge br-int dropped packet 32", "is_log": 1, "log_type": "ovs", "platform": "linux"}
+{"text": "2025-05-05T10:16:52.990Z|00432|ovsdb-server|INFO|openvswitch datapath reconnect darwin host 32", "is_log": 1, "log_type": "ovs", "platform": "macos"}
+{"text": "Jan 06 10:33:14 host33 systemd[133]: Started service unit-33", "is_log": 1, "log_type": "sys", "platform": "linux"}
+{"text": "2025-03-06 11:06:22 INFO com.apple.xpc.launchd[233] Notice service restart 33", "is_log": 1, "log_type": "sys", "platform": "macos"}
+{"text": "2025-04-06 12:39:31 kernel: irq 33 handled by module netdrv5", "is_log": 1, "log_type": "kernel", "platform": "linux"}
+{"text": "06/06/2025 13:12:44 WARN kernel32 win32 stack fault id=33", "is_log": 1, "log_type": "kernel", "platform": "windows"}
+{"text": "Jan 06 08:45:41 sshd[333]: Failed password for invalid user admin from 10.0.3.33", "is_log": 1, "log_type": "auth", "platform": "linux"}
+{"text": "06/06/2025 07:18:11 ERROR EventLog: Logon failure for user SERVICE_33", "is_log": 1, "log_type": "auth", "platform": "windows"}
+{"text": "2025-05-06T10:51:22.120Z|00033|ovs-vswitchd|WARN|bridge br-int dropped packet 33", "is_log": 1, "log_type": "ovs", "platform": "linux"}
+{"text": "2025-05-06T10:24:52.990Z|00433|ovsdb-server|INFO|openvswitch datapath reconnect darwin host 33", "is_log": 1, "log_type": "ovs", "platform": "macos"}
+{"text": "Jan 07 10:34:14 host34 systemd[134]: Started service unit-34", "is_log": 1, "log_type": "sys", "platform": "linux"}
+{"text": "2025-03-07 11:08:22 INFO com.apple.xpc.launchd[234] Notice service restart 34", "is_log": 1, "log_type": "sys", "platform": "macos"}
+{"text": "2025-04-07 12:42:31 kernel: irq 34 handled by module netdrv6", "is_log": 1, "log_type": "kernel", "platform": "linux"}
+{"text": "06/07/2025 13:16:44 WARN kernel32 win32 stack fault id=34", "is_log": 1, "log_type": "kernel", "platform": "windows"}
+{"text": "Jan 07 08:50:41 sshd[334]: Failed password for invalid user admin from 10.0.4.34", "is_log": 1, "log_type": "auth", "platform": "linux"}
+{"text": "06/07/2025 07:24:11 ERROR EventLog: Logon failure for user SERVICE_34", "is_log": 1, "log_type": "auth", "platform": "windows"}
+{"text": "2025-05-07T10:58:22.120Z|00034|ovs-vswitchd|WARN|bridge br-int dropped packet 34", "is_log": 1, "log_type": "ovs", "platform": "linux"}
+{"text": "2025-05-07T10:32:52.990Z|00434|ovsdb-server|INFO|openvswitch datapath reconnect darwin host 34", "is_log": 1, "log_type": "ovs", "platform": "macos"}
+{"text": "Jan 08 10:35:14 host35 systemd[135]: Started service unit-35", "is_log": 1, "log_type": "sys", "platform": "linux"}
+{"text": "2025-03-08 11:10:22 INFO com.apple.xpc.launchd[235] Notice service restart 35", "is_log": 1, "log_type": "sys", "platform": "macos"}
+{"text": "2025-04-08 12:45:31 kernel: irq 35 handled by module netdrv0", "is_log": 1, "log_type": "kernel", "platform": "linux"}
+{"text": "06/08/2025 13:20:44 WARN kernel32 win32 stack fault id=35", "is_log": 1, "log_type": "kernel", "platform": "windows"}
+{"text": "Jan 08 08:55:41 sshd[335]: Failed password for invalid user admin from 10.0.5.35", "is_log": 1, "log_type": "auth", "platform": "linux"}
+{"text": "06/08/2025 07:30:11 ERROR EventLog: Logon failure for user SERVICE_35", "is_log": 1, "log_type": "auth", "platform": "windows"}
+{"text": "2025-05-08T10:05:22.120Z|00035|ovs-vswitchd|WARN|bridge br-int dropped packet 35", "is_log": 1, "log_type": "ovs", "platform": "linux"}
+{"text": "2025-05-08T10:40:52.990Z|00435|ovsdb-server|INFO|openvswitch datapath reconnect darwin host 35", "is_log": 1, "log_type": "ovs", "platform": "macos"}
+{"text": "Jan 09 10:36:14 host36 systemd[136]: Started service unit-36", "is_log": 1, "log_type": "sys", "platform": "linux"}
+{"text": "2025-03-09 11:12:22 INFO com.apple.xpc.launchd[236] Notice service restart 36", "is_log": 1, "log_type": "sys", "platform": "macos"}
+{"text": "2025-04-09 12:48:31 kernel: irq 36 handled by module netdrv1", "is_log": 1, "log_type": "kernel", "platform": "linux"}
+{"text": "06/09/2025 13:24:44 WARN kernel32 win32 stack fault id=36", "is_log": 1, "log_type": "kernel", "platform": "windows"}
+{"text": "Jan 09 08:00:41 sshd[336]: Failed password for invalid user admin from 10.0.6.36", "is_log": 1, "log_type": "auth", "platform": "linux"}
+{"text": "06/09/2025 07:36:11 ERROR EventLog: Logon failure for user SERVICE_36", "is_log": 1, "log_type": "auth", "platform": "windows"}
+{"text": "2025-05-09T10:12:22.120Z|00036|ovs-vswitchd|WARN|bridge br-int dropped packet 36", "is_log": 1, "log_type": "ovs", "platform": "linux"}
+{"text": "2025-05-09T10:48:52.990Z|00436|ovsdb-server|INFO|openvswitch datapath reconnect darwin host 36", "is_log": 1, "log_type": "ovs", "platform": "macos"}
+{"text": "Jan 10 10:37:14 host37 systemd[137]: Started service unit-37", "is_log": 1, "log_type": "sys", "platform": "linux"}
+{"text": "2025-03-10 11:14:22 INFO com.apple.xpc.launchd[237] Notice service restart 37", "is_log": 1, "log_type": "sys", "platform": "macos"}
+{"text": "2025-04-10 12:51:31 kernel: irq 37 handled by module netdrv2", "is_log": 1, "log_type": "kernel", "platform": "linux"}
+{"text": "06/10/2025 13:28:44 WARN kernel32 win32 stack fault id=37", "is_log": 1, "log_type": "kernel", "platform": "windows"}
+{"text": "Jan 10 08:05:41 sshd[337]: Failed password for invalid user admin from 10.0.7.37", "is_log": 1, "log_type": "auth", "platform": "linux"}
+{"text": "06/10/2025 07:42:11 ERROR EventLog: Logon failure for user SERVICE_37", "is_log": 1, "log_type": "auth", "platform": "windows"}
+{"text": "2025-05-10T10:19:22.120Z|00037|ovs-vswitchd|WARN|bridge br-int dropped packet 37", "is_log": 1, "log_type": "ovs", "platform": "linux"}
+{"text": "2025-05-10T10:56:52.990Z|00437|ovsdb-server|INFO|openvswitch datapath reconnect darwin host 37", "is_log": 1, "log_type": "ovs", "platform": "macos"}
+{"text": "Jan 11 10:38:14 host38 systemd[138]: Started service unit-38", "is_log": 1, "log_type": "sys", "platform": "linux"}
+{"text": "2025-03-11 11:16:22 INFO com.apple.xpc.launchd[238] Notice service restart 38", "is_log": 1, "log_type": "sys", "platform": "macos"}
+{"text": "2025-04-11 12:54:31 kernel: irq 38 handled by module netdrv3", "is_log": 1, "log_type": "kernel", "platform": "linux"}
+{"text": "06/11/2025 13:32:44 WARN kernel32 win32 stack fault id=38", "is_log": 1, "log_type": "kernel", "platform": "windows"}
+{"text": "Jan 11 08:10:41 sshd[338]: Failed password for invalid user admin from 10.0.8.38", "is_log": 1, "log_type": "auth", "platform": "linux"}
+{"text": "06/11/2025 07:48:11 ERROR EventLog: Logon failure for user SERVICE_38", "is_log": 1, "log_type": "auth", "platform": "windows"}
+{"text": "2025-05-11T10:26:22.120Z|00038|ovs-vswitchd|WARN|bridge br-int dropped packet 38", "is_log": 1, "log_type": "ovs", "platform": "linux"}
+{"text": "2025-05-11T10:04:52.990Z|00438|ovsdb-server|INFO|openvswitch datapath reconnect darwin host 38", "is_log": 1, "log_type": "ovs", "platform": "macos"}
+{"text": "Jan 12 10:39:14 host39 systemd[139]: Started service unit-39", "is_log": 1, "log_type": "sys", "platform": "linux"}
+{"text": "2025-03-12 11:18:22 INFO com.apple.xpc.launchd[239] Notice service restart 39", "is_log": 1, "log_type": "sys", "platform": "macos"}
+{"text": "2025-04-12 12:57:31 kernel: irq 39 handled by module netdrv4", "is_log": 1, "log_type": "kernel", "platform": "linux"}
+{"text": "06/12/2025 13:36:44 WARN kernel32 win32 stack fault id=39", "is_log": 1, "log_type": "kernel", "platform": "windows"}
+{"text": "Jan 12 08:15:41 sshd[339]: Failed password for invalid user admin from 10.0.9.39", "is_log": 1, "log_type": "auth", "platform": "linux"}
+{"text": "06/12/2025 07:54:11 ERROR EventLog: Logon failure for user SERVICE_39", "is_log": 1, "log_type": "auth", "platform": "windows"}
+{"text": "2025-05-12T10:33:22.120Z|00039|ovs-vswitchd|WARN|bridge br-int dropped packet 39", "is_log": 1, "log_type": "ovs", "platform": "linux"}
+{"text": "2025-05-12T10:12:52.990Z|00439|ovsdb-server|INFO|openvswitch datapath reconnect darwin host 39", "is_log": 1, "log_type": "ovs", "platform": "macos"}
+{"text": "Jan 13 10:40:14 host40 systemd[140]: Started service unit-40", "is_log": 1, "log_type": "sys", "platform": "linux"}
+{"text": "2025-03-13 11:20:22 INFO com.apple.xpc.launchd[240] Notice service restart 40", "is_log": 1, "log_type": "sys", "platform": "macos"}
+{"text": "2025-04-13 12:00:31 kernel: irq 40 handled by module netdrv5", "is_log": 1, "log_type": "kernel", "platform": "linux"}
+{"text": "06/13/2025 13:40:44 WARN kernel32 win32 stack fault id=40", "is_log": 1, "log_type": "kernel", "platform": "windows"}
+{"text": "Jan 13 08:20:41 sshd[340]: Failed password for invalid user admin from 10.0.0.40", "is_log": 1, "log_type": "auth", "platform": "linux"}
+{"text": "06/13/2025 07:00:11 ERROR EventLog: Logon failure for user SERVICE_40", "is_log": 1, "log_type": "auth", "platform": "windows"}
+{"text": "2025-05-13T10:40:22.120Z|00040|ovs-vswitchd|WARN|bridge br-int dropped packet 40", "is_log": 1, "log_type": "ovs", "platform": "linux"}
+{"text": "2025-05-13T10:20:52.990Z|00440|ovsdb-server|INFO|openvswitch datapath reconnect darwin host 40", "is_log": 1, "log_type": "ovs", "platform": "macos"}
+{"text": "Meeting note 1: discuss roadmap, budget, and hiring plan for quarter 2.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 2: discuss roadmap, budget, and hiring plan for quarter 3.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 3: discuss roadmap, budget, and hiring plan for quarter 4.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 4: discuss roadmap, budget, and hiring plan for quarter 1.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 5: discuss roadmap, budget, and hiring plan for quarter 2.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 6: discuss roadmap, budget, and hiring plan for quarter 3.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 7: discuss roadmap, budget, and hiring plan for quarter 4.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 8: discuss roadmap, budget, and hiring plan for quarter 1.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 9: discuss roadmap, budget, and hiring plan for quarter 2.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 10: discuss roadmap, budget, and hiring plan for quarter 3.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 11: discuss roadmap, budget, and hiring plan for quarter 4.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 12: discuss roadmap, budget, and hiring plan for quarter 1.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 13: discuss roadmap, budget, and hiring plan for quarter 2.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 14: discuss roadmap, budget, and hiring plan for quarter 3.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 15: discuss roadmap, budget, and hiring plan for quarter 4.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 16: discuss roadmap, budget, and hiring plan for quarter 1.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 17: discuss roadmap, budget, and hiring plan for quarter 2.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 18: discuss roadmap, budget, and hiring plan for quarter 3.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 19: discuss roadmap, budget, and hiring plan for quarter 4.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 20: discuss roadmap, budget, and hiring plan for quarter 1.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 21: discuss roadmap, budget, and hiring plan for quarter 2.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 22: discuss roadmap, budget, and hiring plan for quarter 3.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 23: discuss roadmap, budget, and hiring plan for quarter 4.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 24: discuss roadmap, budget, and hiring plan for quarter 1.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 25: discuss roadmap, budget, and hiring plan for quarter 2.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 26: discuss roadmap, budget, and hiring plan for quarter 3.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 27: discuss roadmap, budget, and hiring plan for quarter 4.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 28: discuss roadmap, budget, and hiring plan for quarter 1.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 29: discuss roadmap, budget, and hiring plan for quarter 2.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 30: discuss roadmap, budget, and hiring plan for quarter 3.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 31: discuss roadmap, budget, and hiring plan for quarter 4.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 32: discuss roadmap, budget, and hiring plan for quarter 1.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 33: discuss roadmap, budget, and hiring plan for quarter 2.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 34: discuss roadmap, budget, and hiring plan for quarter 3.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 35: discuss roadmap, budget, and hiring plan for quarter 4.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 36: discuss roadmap, budget, and hiring plan for quarter 1.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 37: discuss roadmap, budget, and hiring plan for quarter 2.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 38: discuss roadmap, budget, and hiring plan for quarter 3.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 39: discuss roadmap, budget, and hiring plan for quarter 4.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 40: discuss roadmap, budget, and hiring plan for quarter 1.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 41: discuss roadmap, budget, and hiring plan for quarter 2.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 42: discuss roadmap, budget, and hiring plan for quarter 3.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 43: discuss roadmap, budget, and hiring plan for quarter 4.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 44: discuss roadmap, budget, and hiring plan for quarter 1.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 45: discuss roadmap, budget, and hiring plan for quarter 2.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 46: discuss roadmap, budget, and hiring plan for quarter 3.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 47: discuss roadmap, budget, and hiring plan for quarter 4.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 48: discuss roadmap, budget, and hiring plan for quarter 1.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 49: discuss roadmap, budget, and hiring plan for quarter 2.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 50: discuss roadmap, budget, and hiring plan for quarter 3.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 51: discuss roadmap, budget, and hiring plan for quarter 4.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 52: discuss roadmap, budget, and hiring plan for quarter 1.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 53: discuss roadmap, budget, and hiring plan for quarter 2.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 54: discuss roadmap, budget, and hiring plan for quarter 3.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 55: discuss roadmap, budget, and hiring plan for quarter 4.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 56: discuss roadmap, budget, and hiring plan for quarter 1.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 57: discuss roadmap, budget, and hiring plan for quarter 2.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 58: discuss roadmap, budget, and hiring plan for quarter 3.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 59: discuss roadmap, budget, and hiring plan for quarter 4.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 60: discuss roadmap, budget, and hiring plan for quarter 1.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 61: discuss roadmap, budget, and hiring plan for quarter 2.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 62: discuss roadmap, budget, and hiring plan for quarter 3.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 63: discuss roadmap, budget, and hiring plan for quarter 4.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 64: discuss roadmap, budget, and hiring plan for quarter 1.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 65: discuss roadmap, budget, and hiring plan for quarter 2.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 66: discuss roadmap, budget, and hiring plan for quarter 3.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 67: discuss roadmap, budget, and hiring plan for quarter 4.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 68: discuss roadmap, budget, and hiring plan for quarter 1.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 69: discuss roadmap, budget, and hiring plan for quarter 2.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 70: discuss roadmap, budget, and hiring plan for quarter 3.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 71: discuss roadmap, budget, and hiring plan for quarter 4.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 72: discuss roadmap, budget, and hiring plan for quarter 1.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 73: discuss roadmap, budget, and hiring plan for quarter 2.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 74: discuss roadmap, budget, and hiring plan for quarter 3.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 75: discuss roadmap, budget, and hiring plan for quarter 4.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 76: discuss roadmap, budget, and hiring plan for quarter 1.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 77: discuss roadmap, budget, and hiring plan for quarter 2.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 78: discuss roadmap, budget, and hiring plan for quarter 3.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 79: discuss roadmap, budget, and hiring plan for quarter 4.", "is_log": 0, "log_type": "none", "platform": "unknown"}
+{"text": "Meeting note 80: discuss roadmap, budget, and hiring plan for quarter 1.", "is_log": 0, "log_type": "none", "platform": "unknown"}
