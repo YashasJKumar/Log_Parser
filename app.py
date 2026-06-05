@@ -78,7 +78,7 @@ def main() -> None:
         return
 
     sampled = sample_random_lines(content, MAX_PREVIEW_LINES)
-    st.subheader(f"Random {MAX_PREVIEW_LINES} Lines")
+    st.subheader(f"Random {len(sampled)} Lines (up to {MAX_PREVIEW_LINES})")
     if sampled:
         st.code("\n".join(sampled), language="text")
     else:

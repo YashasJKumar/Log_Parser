@@ -107,6 +107,23 @@ def _keyword_prediction(text: str, keyword_map: Dict[str, List[str]]) -> Optiona
     return best_label, float(best_score / total)
 
 
+def _blend_with_keywords(
+    predicted_label: str,
+    predicted_confidence: float,
+    text: str,
+    keyword_map: Dict[str, List[str]],
+) -> Tuple[str, float]:
+    keyword_result = _keyword_prediction(text, keyword_map)
+    if keyword_result is None:
+        return predicted_label, predicted_confidence
+
+    heuristic_label, keyword_confidence = keyword_result
+    if keyword_confidence >= KEYWORD_CONFIDENCE_THRESHOLD and keyword_confidence >= predicted_confidence:
+        predicted_label = heuristic_label
+    predicted_confidence = max(predicted_confidence, keyword_confidence)
+    return predicted_label, predicted_confidence
+
+
 def _build_pipeline() -> Pipeline:
     combined_features = FeatureUnion(
         [
@@ -234,24 +251,18 @@ class LogFileClassifier:
         log_type_index = int(np.argmax(log_type_probs))
         log_type = str(log_type_model.classes_[log_type_index])
         log_type_confidence = float(log_type_probs[log_type_index])
-        keyword_log_type = _keyword_prediction(cleaned_text, TYPE_KEYWORDS)
-        if keyword_log_type is not None:
-            heuristic_log_type, keyword_confidence = keyword_log_type
-            if keyword_confidence >= KEYWORD_CONFIDENCE_THRESHOLD and keyword_confidence >= log_type_confidence:
-                log_type = heuristic_log_type
-            log_type_confidence = max(log_type_confidence, keyword_confidence)
+        log_type, log_type_confidence = _blend_with_keywords(
+            log_type, log_type_confidence, cleaned_text, TYPE_KEYWORDS
+        )
 
         platform_model = self.models["platform"]
         platform_probs = platform_model.predict_proba([cleaned_text])[0]
         platform_index = int(np.argmax(platform_probs))
         platform = str(platform_model.classes_[platform_index])
         platform_confidence = float(platform_probs[platform_index])
-        keyword_platform = _keyword_prediction(cleaned_text, PLATFORM_KEYWORDS)
-        if keyword_platform is not None:
-            heuristic_platform, keyword_confidence = keyword_platform
-            if keyword_confidence >= KEYWORD_CONFIDENCE_THRESHOLD and keyword_confidence >= platform_confidence:
-                platform = heuristic_platform
-            platform_confidence = max(platform_confidence, keyword_confidence)
+        platform, platform_confidence = _blend_with_keywords(
+            platform, platform_confidence, cleaned_text, PLATFORM_KEYWORDS
+        )
 
         return PredictionResult(
             is_log_file=True,
